@@ -21,14 +21,22 @@
 
     <!-- Form -->
     <form action="add_muliple.php" method="post" class="bg-white p-8 rounded-lg shadow-lg" enctype="multipart/form-data">
-        <input type="submit" value="Submit" class="btn-submit p-2 rounded hover:opacity" name="btn">
+        <?php
+        session_start();
+        if (isset($_SESSION['acc_exist'])) { ?>
+        <p class="text-red-400"><?= $_SESSION['acc_exist'] ?></p>
+        <?php
+        unset($_SESSION['acc_exist']);
+        } ?>
+        <input type="submit" value="Submit" class="btn-submit p-2 rounded hover:opacity-70 cursor-pointer" name="btn">
+
 
         <div class="mt-4">
             <div class="grid grid-cols-1">
                 <!-- Initial Inputs -->
                 <div>
-                    <input type="text" placeholder="Username" class="input-field" required name="firstname-0">
-                    <input type="text" placeholder="Username" class="input-field" required name="lastname-0">
+                    <input type="text" placeholder="First Name" class="input-field" required name="firstname-0">
+                    <input type="text" placeholder="Lase Name" class="input-field" required name="lastname-0">
                     <input type="text" placeholder="Username" class="input-field" required name="username-0">
                     <input type="email" placeholder="Email" class="input-field" required name="email-0">
                     <input type="password" placeholder="Password" class="input-field" required name="password-0">
