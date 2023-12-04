@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
             $hashed_password = password_hash($createpassword, PASSWORD_DEFAULT);
             
             // check if username or email already exist in database
-            $user_check_query = "SELECT * FROM annoncer WHERE username='$username' OR email='$email'";
+            $user_check_query = "SELECT * FROM users WHERE username='$username' OR email='$email'";
             $user_check_result = mysqli_query($connection, $user_check_query);
             if (mysqli_num_rows($user_check_result) > 0){
                 $_SESSION['signup'] = "Username or Email already exist";
@@ -71,7 +71,7 @@ if(isset($_POST['submit'])){
         die();
     } else{
         //insert new user into users table
-        $insert_user_query = "INSERT INTO annoncer SET firstname='$firstname', lastname='$lastname', username='$username', email='$email',
+        $insert_user_query = "INSERT INTO users SET firstname='$firstname', lastname='$lastname', username='$username', email='$email',
          password='$hashed_password', avatar='$avatar_name', is_admin=0";
          $insert_user_result = mysqli_query($connection, $insert_user_query);
 

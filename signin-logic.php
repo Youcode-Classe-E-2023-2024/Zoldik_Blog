@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['signin'] = "Password Required";
     } else {
         //fetch user from database
-        $fetch_user_query = "SELECT * FROM annoncer WHERE username='$username_email' OR 
+        $fetch_user_query = "SELECT * FROM users WHERE username='$username_email' OR 
         email='$username_email'";
         $fetch_user_result = mysqli_query($connection, $fetch_user_query);
 
