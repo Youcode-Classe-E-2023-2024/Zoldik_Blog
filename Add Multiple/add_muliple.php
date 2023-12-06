@@ -6,7 +6,7 @@ if (isset($_POST['btn'])) {
     $i = $_POST['i'];
 
     for ($j=0; $j < $i; $j++) {
-        $check_acc_exist_query = "SELECT * FROM annoncer where username = ? OR email = ?";
+        $check_acc_exist_query = "SELECT * FROM users where username = ? OR email = ?";
         $stm = $connect->prepare($check_acc_exist_query);
         $stm->bind_param('ss', $_POST['username-' . $j], $_POST['email-' . $j]);
         $stm->execute();
@@ -29,7 +29,7 @@ if (isset($_POST['btn'])) {
 
             $hashedPassword = password_hash($_POST['password-' . $j], PASSWORD_DEFAULT);
 
-            $queryiNSERT = "INSERT INTO annoncer (firstname, lastname, username, email, password, avatar, is_admin) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            $queryiNSERT = "INSERT INTO users (firstname, lastname, username, email, password, avatar, is_admin) VALUES (?, ?, ?, ?, ?, ?, ?)";
             $stm = $connect->prepare($queryiNSERT);
             $stm->bind_param('ssssssi', $_POST['firstname-' . $j],$_POST['lastname-' . $j], $_POST['username-' . $j], $_POST['email-' . $j], $hashedPassword, $uploadFile, $isadmin);
             $rslt = $stm->execute();
