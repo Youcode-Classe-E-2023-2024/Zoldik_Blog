@@ -18,6 +18,7 @@
     </div>
 
     <!-- Form -->
+
     <form action="add_muliple.php" method="post" class="bg-white p-4 rounded-lg shadow-lg" enctype="multipart/form-data">
         <?php
         session_start();
@@ -37,6 +38,7 @@
                 <div class="">
                     <input type="text" placeholder="First Name" class="input-field" required name="firstname-0">
                     <input type="text" placeholder="Last Name" class="input-field" required name="lastname-0">
+
                     <input type="text" placeholder="Username" class="input-field" required name="username-0">
                     <input type="email" placeholder="Email" class="input-field" required name="email-0">
                     <input type="password" placeholder="Password" class="input-field" required name="password-0">

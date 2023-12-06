@@ -1,11 +1,11 @@
 <?php
-
 if (isset($_POST['btn'])) {
     include_once 'config.php';
 
     $i = $_POST['i'];
 
     for ($j=0; $j < $i; $j++) {
+
         $check_acc_exist_query = "SELECT * FROM users where username = ? OR email = ?";
         $stm = $connect->prepare($check_acc_exist_query);
         $stm->bind_param('ss', $_POST['username-' . $j], $_POST['email-' . $j]);
@@ -23,9 +23,10 @@ if (isset($_POST['btn'])) {
             $uploadFile = $uploadDir . basename($originalFileName);
             move_uploaded_file($_FILES['avatar-' . $j]['tmp_name'], $uploadFile);
 
-            if ($_POST['is_admin-' . $j] === 'admin') {
-                $isadmin = 1;
-            }
+        $originalFileName = $_FILES['avatar-' . $j]['name'];
+        $uploadFile = $uploadDir . basename($originalFileName);
+        move_uploaded_file($_FILES['avatar-' . $j]['tmp_name'], $uploadFile);
+
 
             $hashedPassword = password_hash($_POST['password-' . $j], PASSWORD_DEFAULT);
 
@@ -38,6 +39,7 @@ if (isset($_POST['btn'])) {
             } else {
                 header('location: index.php');
             }
+
         }
     }
 }

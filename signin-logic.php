@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
                     $_SESSION['user_is_admin'] = true;
                 }
                 //log user in
-                header('location: ' . ROOT_URL . 'admin/');
+                header('location: ' . ROOT_URL . 'dist/index2.php');
             } else {
                 $_SESSION['signin'] = "Please check ur input";
             }
