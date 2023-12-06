@@ -28,3 +28,21 @@ removeBtn.addEventListener('click', ()=>{
 
 });
 
+// DELETE BUTTONS LOGIC 
+const delete_btn = document.querySelectorAll('.delete_btn');
+console.log(delete_btn);
+const deleteAlert = document.querySelector('.deleteAlert');
+const id_user_input = document.getElementById('id_user');
+
+delete_btn.forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+        const userId = event.currentTarget.getAttribute('data-id');
+        id_user_input.value = userId;
+        toggleDeleteAlert();
+    });
+});
+
+function toggleDeleteAlert() {
+    deleteAlert.classList.toggle('hidden');
+}
+ 
