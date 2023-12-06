@@ -137,7 +137,7 @@
                                     placeholder="Write a comment..." required>
                                 </textarea>
                             </div>
-                            <input type="hidden" name="commenter_id" value="<?php echo $_POST['myId'] ?>">
+                            <input type="hidden" name="commenter_id" value="<?php echo $_SESSION['user-id'] ?>">
                             <button type="submit"  
                                 class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center bg-blue-600 ">
                                 Post comment 

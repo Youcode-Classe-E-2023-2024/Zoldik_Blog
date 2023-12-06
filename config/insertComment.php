@@ -6,7 +6,7 @@
 
 <?php 
     session_start();
-    $current = $_SESSION['current'];
+    $logger_id = $_SESSION['user-id'];
     // Create connection
     $conn = mysqli_connect('localhost', 'root', '', 'blog');
     $comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -31,7 +31,7 @@
     foreach ($comments as $comment) {
         foreach($users as $user) {
             if($comment[2] == $user[0]) {
-                if($comment[2] == $current) {
+                if($comment[2] == $logger_id) {
                     $html .= <<<NOWDOC
                         <main class="p-6 text-base bg-white rounded-lg dark:bg-gray-900">
                             <footer class="flex justify-between items-center mb-2">

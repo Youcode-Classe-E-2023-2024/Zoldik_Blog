@@ -12,8 +12,7 @@
    $conn = mysqli_connect('localhost', 'root', '', 'blog'); 
    $sql = "SELECT * FROM `users`"; 
    $select_users = mysqli_query($conn, $sql); 
-   $users = mysqli_fetch_all($select_users); 
-
+   $users = mysqli_fetch_all($select_users);
 
    // echo 'articles <br>';
    // echo '<pre>'; 
