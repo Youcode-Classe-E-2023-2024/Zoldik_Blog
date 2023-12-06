@@ -23,10 +23,9 @@ if (isset($_POST['btn'])) {
             $uploadFile = $uploadDir . basename($originalFileName);
             move_uploaded_file($_FILES['avatar-' . $j]['tmp_name'], $uploadFile);
 
-        $originalFileName = $_FILES['avatar-' . $j]['name'];
-        $uploadFile = $uploadDir . basename($originalFileName);
-        move_uploaded_file($_FILES['avatar-' . $j]['tmp_name'], $uploadFile);
-
+            if ($_POST['is_admin-' . $j] === 'admin') {
+                $isadmin = 1;
+            }
 
             $hashedPassword = password_hash($_POST['password-' . $j], PASSWORD_DEFAULT);
 
