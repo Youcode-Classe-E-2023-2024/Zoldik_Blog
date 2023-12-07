@@ -20,4 +20,4 @@ jobs:
         username: if0_35567205
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
-        server-dir: ./htdocs/`
+        server-dir: ./htdocs/
