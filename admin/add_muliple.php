@@ -16,7 +16,8 @@ if (isset($_POST['btn'])) {
             $_SESSION['acc_exist'] = 'Account Already Exists!';
             header('location: index.php');
         } else {
-            $uploadDir = 'uploads/';
+
+            $uploadDir = '../uploads/';
             $isadmin = 0; // announcer by default
 
             $originalFileName = $_FILES['avatar-' . $j]['name'];
