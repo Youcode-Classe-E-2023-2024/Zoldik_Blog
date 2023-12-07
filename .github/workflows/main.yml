@@ -1,4 +1,4 @@
-`on:
+on:
   push:
     branches:
       - main  
@@ -17,7 +17,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ftpupload.net
-        username: if0_35567205
+        username: if0_35553201
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
         server-dir: ./htdocs/
