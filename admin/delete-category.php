@@ -43,3 +43,5 @@ if (isset($_GET['id'])) {
 header('Location: ' . ROOT_URL . 'admin/manage-categories.php');
 exit();
 ?>
+
+
