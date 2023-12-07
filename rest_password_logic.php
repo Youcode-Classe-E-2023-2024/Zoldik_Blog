@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     echo 'Error sending email: ' . $mail->ErrorInfo;
                 }
             } else {
-                echo 'Error: ' . mysqli_error($connection);
+                echo 'Error: ' . mysqli_error($connection);     
             }
         }
     } else {
