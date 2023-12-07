@@ -1,7 +1,6 @@
 <?php
     session_start(); 
-    $_SESSION['current'] = $_POST['myId'];
-
+    $_SESSION['current_article'] = $_POST['article_id'];
     // articles table
     $conn = mysqli_connect('localhost', 'root', '', 'blog'); 
     $sql = "SELECT * FROM `articles`"; 
@@ -108,7 +107,7 @@
                     <?php
                         $html = '';
                         foreach ($articles as $article) {
-                            if ($article[6] == $_POST['myId']) {
+                            if ($article[0] == $_POST['article_id'] ) {
                                $html .= <<<NOWDOC
                                <div class="CARD max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-lg">
                                      <img src="../$article[4]" alt="Article Image" class="w-full h-64 object-cover">
@@ -137,6 +136,7 @@
                                     placeholder="Write a comment..." required>
                                 </textarea>
                             </div>
+                            <input type="hidden" name="article_id" value="<?php echo $_POST['article_id'] ?>">
                             <input type="hidden" name="commenter_id" value="<?php echo $_SESSION['user-id'] ?>">
                             <button type="submit"  
                                 class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center bg-blue-600 ">
@@ -145,7 +145,7 @@
                         </form>
                         <!--  -->
                         <div id="comments_parent">
-        
+
                         </div>
                     </div>
                 </section>
