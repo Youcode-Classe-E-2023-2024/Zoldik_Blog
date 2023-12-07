@@ -3,7 +3,7 @@ require '../config/database.php';
 
 if(isset($_POST['submit'])){
     //get form data
-    $category = filter_var($_POST['title'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $category = filter_var($_POST['category'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     if(!$category){
         $_SESSION['add-category'] = "Enter category";
