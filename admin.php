@@ -17,7 +17,7 @@
         <div class="opacity-80 bg-none" id="l">
             <p class="w-full p-4 pl-10 my-2  text-2xl hover:cursor-pointer">Dashboard</p>
             <p class="w-full p-4 pl-10 my-2  text-2xl hover:cursor-pointer">Add Users</p>
-            <p class="w-full p-4 pl-10 my-2 text-2xl hover:cursor-pointer">Products</p>
+            <p class="w-full p-4 pl-10 my-2 text-2xl hover:cursor-pointer">Add product</p>
         </div>
         <form action="#" method="post">
         <button name="admin_logout_btn" class="text-start hover:opacity-70 w-full p-4 pl-10 my-2 text-red-500 font-bold text-xl">Log Out</button>
@@ -141,16 +141,21 @@
             </section>
 
         </div>
+
+        <div id="div3">yassin wld l9hbaaaaaaaaaaaaa</div>
     </div>
+
 </div>
+
 
 
 <script>
     const p = document.querySelectorAll('div#l p');
     const d1 = document.querySelector('#div1');
     const d2 = document.querySelector('#div2');
+    const d3 = document.querySelector('#div3');
 
-    const div = [d1, d2];
+    const div = [d1, d2, d3];
 
     function lowerOpacity() {
         p.forEach((element)=>{
@@ -186,6 +191,11 @@
                 case ele = p[1]:
                     hideDivs();
                     div[1].style.display = 'block';
+                    break;
+
+                case ele = p[2]:
+                    hideDivs();
+                    div[2].style.display = 'block';
                     break;
             }
         });
