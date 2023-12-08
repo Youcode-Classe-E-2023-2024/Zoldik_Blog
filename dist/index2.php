@@ -176,9 +176,9 @@
                   $html = '';
                   foreach($categories as $category) {
                      $html .=<<<HEREDOC
-                        <form class="border-b border-solid border-black m-0 cursor-pointer">
-                           <input type="hidden" name="user_id" value="$category[0]">
-                           <button class="w-full h-10 font-bold">$category[1]</button>
+                        <form action="index2.php" method="post" class="border-b border-solid border-black m-0 cursor-pointer">
+                           <input type="hidden" name="category_id" value="$category[0]">
+                           <button type="submit" class="w-full h-10 font-bold">$category[1]</button>
                         </form>
                      HEREDOC;
                   }
@@ -199,26 +199,36 @@
                      </div>
                   </div>
                   <form action="../dist/readmore1.php" method="post" class="grid grid-cols-2 gap-x-4 gap-y-8 px-2 py-6">
+                     <!-- FETCHING THE ARTICLES INTO THE CURRENT PAGE: -->
                      <?php
-                     $html = '';
-                     foreach ($articles as $article) {
-                        foreach ($users as $user) {
-                           if ($article[6] == $user[0]) {
-                              $half = substr($article[2], 0, 200);
-                              $html .= <<<NOWDOC
-                                    <button type="submit" name="article_id" value="$article[0]"  key="$user[0]" class="CARD max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-lg">
-                                          <img src="../$article[4]" alt="Article Image" class="w-full h-64 object-cover">
-                                          <div class="p-6">
-                                             <h1 class="text-3xl font-bold mb-2">$article[1]</h1>
-                                             <p class="text-gray-950 font-bold"> $half...
-                                             </p>
-                                          </div>
-                                    </button>
-                                 NOWDOC;
+                      
+                      echo '<pre>'; 
+                      print_r($_POST);
+                      echo '</pre>';
+                   
+                       $html = '';
+                       foreach ($articles as $article) {
+                           foreach ($users as $user) {
+                               if ($article[6] == $user[0]) {
+                                   $half = substr($article[2], 0, 200);
+                                   $html .= <<<NOWDOC
+                                       <button type="submit" name="article_id" value="$article[0]"  key="$user[0]" class="CARD max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-lg">
+                                               <img src="../$article[4]" alt="Article Image" class="w-full h-64 object-cover">
+                                               <div class="p-6">
+                                                   <h1 class="text-3xl font-bold mb-2">$article[1]</h1>
+                                                   <p class="text-gray-950 font-bold"> $half...
+                                                   </p>
+                                               </div>
+                                       </button>
+                                       NOWDOC;
+                               }
                            }
-                        }
-                     }
-                     echo $html;
+                       }
+                       echo $html;
+                       if(isset($_POST['category_id'])) {
+                           unset($_POST);
+                       }
+                        
                      ?>
                   </form>
                   <!-- Page Wrap -->
@@ -304,3 +314,4 @@
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </html>
+
