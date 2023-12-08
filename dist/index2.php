@@ -30,12 +30,14 @@
 
       #top_bloggers_btn {
          position: absolute;
+         right: 0;
          top: 5;
       }
 
       #top_bloggers_sct {
          position: fixed;
          top: 65;
+         right: 0;
          height: 100vh;
          width: 20%;
          overflow: auto;
