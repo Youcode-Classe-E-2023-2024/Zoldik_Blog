@@ -39,6 +39,9 @@ include 'partials/header.php';
             <div class="my-8">
                 <a href="articles.php" class="w-full p-4 pl-10 my-2 text-2xl hover:cursor-pointer opacity-70">Articles</a>
             </div>
+            <div class="my-8">
+                <a href="categories.php" class="w-full p-4 pl-10 my-2 text-2xl hover:cursor-pointer opacity-70">Categories</a>
+            </div>
         </div>
         <form action="#" method="post">
         <button name="admin_logout_btn" class="text-start hover:opacity-70 w-full p-4 pl-10 my-2 text-red-500 font-bold text-xl">Log Out</button>
