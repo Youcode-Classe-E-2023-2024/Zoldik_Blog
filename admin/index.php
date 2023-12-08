@@ -37,7 +37,7 @@ include 'partials/header.php';
                 <a href="add-post.php" class="w-full p-4 pl-10 my-2 text-2xl hover:cursor-pointer opacity-70">Add Article</a>
             </div>
             <div class="my-8">
-                <a href="" class="w-full p-4 pl-10 my-2 text-2xl hover:cursor-pointer opacity-70">Articles</a>
+                <a href="articles.php" class="w-full p-4 pl-10 my-2 text-2xl hover:cursor-pointer opacity-70">Articles</a>
             </div>
         </div>
         <form action="#" method="post">
