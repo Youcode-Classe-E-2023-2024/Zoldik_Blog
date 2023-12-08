@@ -176,10 +176,9 @@
                   $html = '';
                   foreach($categories as $category) {
                      $html .=<<<HEREDOC
-                        <form action="index2.php" method="post" class="border-b border-solid border-black m-0 cursor-pointer">
-                           <input type="hidden" name="category_id" value="$category[0]">
-                           <button type="submit" class="w-full h-10 font-bold">$category[1]</button>
-                        </form>
+                        <div key="$category[0]" class="CTGS py-2 border-b border-solid border-black m-0 cursor-pointer">
+                           $category[1]
+                        </div>
                      HEREDOC;
                   }
                   echo $html;
@@ -201,18 +200,13 @@
                   <form action="../dist/readmore1.php" method="post" class="grid grid-cols-2 gap-x-4 gap-y-8 px-2 py-6">
                      <!-- FETCHING THE ARTICLES INTO THE CURRENT PAGE: -->
                      <?php
-                      
-                      echo '<pre>'; 
-                      print_r($_POST);
-                      echo '</pre>';
-                   
                        $html = '';
                        foreach ($articles as $article) {
                            foreach ($users as $user) {
                                if ($article[6] == $user[0]) {
                                    $half = substr($article[2], 0, 200);
                                    $html .= <<<NOWDOC
-                                       <button type="submit" name="article_id" value="$article[0]"  key="$user[0]" class="CARD max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-lg">
+                                       <button category_id="$article[5]" type="submit" name="article_id" value="$article[0]"  key="$user[0]" class="CARD max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-lg">
                                                <img src="../$article[4]" alt="Article Image" class="w-full h-64 object-cover">
                                                <div class="p-6">
                                                    <h1 class="text-3xl font-bold mb-2">$article[1]</h1>
@@ -225,10 +219,6 @@
                            }
                        }
                        echo $html;
-                       if(isset($_POST['category_id'])) {
-                           unset($_POST);
-                       }
-                        
                      ?>
                   </form>
                   <!-- Page Wrap -->
@@ -307,6 +297,8 @@
 <script src="script.js"></script>
 <!-- top bloggers logic -->
 <script src="topBloggers.js"></script>
+<!-- cat_filter logic -->
+<script src="cat_filter.js"></script>
 <!-- tailwind cdn -->
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- ionicons cdn -->
