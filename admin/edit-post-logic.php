@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     $title = filter_var($_POST['title'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $body = filter_var($_POST['body'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $description = filter_var($_POST['description'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $category_id = filter_var($_POST['category_id'], FILTER_SANITIZE_NUMBER_INT);
+    $category_id = filter_var($_POST['categori'], FILTER_SANITIZE_NUMBER_INT);
     $path = $_FILES['path'];
 
     //check and validate input values
@@ -43,16 +43,13 @@ if (isset($_POST['submit'])) {
             }
         }
 
-        if ($_SESSION['edit-post']) {
-            //redirect to the manage form page if the form was invalid
-            header('location: ' . ROOT_URL . 'admin/');
-            die();
-        } else {
+       
 
             $path_to_insert = isset($path_name) ? $path_name : $previous_path_name;
 
             $query = "UPDATE articles SET title='$title', body='$body', description='$description', path='$path_to_insert', 
             category_id=$category_id WHERE id=$id LIMIT 1";
+
             $result = mysqli_query($connection, $query);
         }
 
@@ -60,7 +57,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['edit-post-success'] = "Post update successful.";
         }
     }
-}
+
 
 header('location: ' . ROOT_URL . 'admin/');
 die();

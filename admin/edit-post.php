@@ -33,9 +33,9 @@ if(isset($_GET['id'])) {
       </div>
     </div>
 
-    <select name="category" id="countries" class="mb-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-        <?php while ($category = mysqli_fetch_assoc($categories)) : ?>
-              <option value="<?= $category['id'] ?>"><?= $category['category'] ?></option>
+    <select name="categori" id="category" class="mb-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <?php while ($categori = mysqli_fetch_assoc($categories)) : ?>
+              <option value="<?= $categori['id'] ?>"><?= $categori['category'] ?></option>
         <?php endwhile ?>      
     </select>
 
@@ -43,7 +43,7 @@ if(isset($_GET['id'])) {
     
     <div class="mb-4">
        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="path">Change Path</label>
-       <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="path" name="thumbnail" type="file">
+       <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="path" name="path" type="file">
     </div>
 
     <button name="submit" type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base w-full sm:w-auto px-6 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update Article</button>
