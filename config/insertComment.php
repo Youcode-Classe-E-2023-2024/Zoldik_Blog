@@ -19,12 +19,12 @@
     mysqli_close($conn);
     // users table
     $conn = mysqli_connect('localhost', 'root', '', 'blog');
-    $sql = "SELECT * FROM `users`"; 
+    $sql = "SELECT * FROM `users` ORDER BY id DESC"; 
     $select_users = mysqli_query($conn, $sql); 
     $users = mysqli_fetch_all($select_users); 
 
     // comments tables
-    $sql = "SELECT * FROM `comments`"; 
+    $sql = "SELECT * FROM `comments` ORDER BY id DESC"; 
     $select_comments = mysqli_query($conn, $sql); 
     $comments = mysqli_fetch_all($select_comments);
     // 
@@ -32,7 +32,7 @@
     foreach ($comments as $comment) {
         foreach($users as $user) {
             if($comment[2] == $user[0]) {
-                if($comment[2] == $logger_id && $comment[3] == $_SESSION['current_article']) {
+                if($comment[2] == $logger_id && $comment[3] == $_SESSION['current_article'] && $_POST['oneTwo'] == 1) {
                     $html .= <<<NOWDOC
                         <main class="p-6 text-base bg-white rounded-lg dark:bg-gray-900">
                             <footer class="flex justify-between items-center mb-2">

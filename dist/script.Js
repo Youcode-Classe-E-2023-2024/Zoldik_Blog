@@ -6,28 +6,33 @@ const child2 = document.getElementById('child2');
 
 console.log(comments_section);
 console.log(comments_parent);
-console.log(commentForm); 
+console.log(commentForm);
 
 // Function to update comments and add event listeners
 function updateComments() {
-    fetch('../config/insertComment.php')
-        .then(response => response.text())
-        .then(data => {
-            comments_parent.innerHTML = data;
-            const comment_setting = document.querySelectorAll('.comment_setting'); 
-            for (const el of comment_setting) {
-                el.addEventListener('click', function() {
-                    // insert the comment id in local storage
-                    let commentId = el.getAttribute('key');
-                    localStorage.setItem('commentId', commentId);
-        
-                    child1.classList.toggle('HIDDEN');
-                    child2.classList.toggle('HIDDEN');
-                })
-            }
-        });
+    const formData = new FormData(); 
+    formData.append('oneTwo', comments_parent.getAttribute('key'));
+    fetch('../config/insertComment.php', {
+        method: 'POST', 
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        comments_parent.innerHTML = data;
+        const comment_setting = document.querySelectorAll('.comment_setting'); 
+        for (const el of comment_setting) {
+            el.addEventListener('click', function() {
+                // insert the comment id in local storage
+                let commentId = el.getAttribute('key');
+                localStorage.setItem('commentId', commentId);
+    
+                child1.classList.toggle('HIDDEN');
+                child2.classList.toggle('HIDDEN');
+            })
+        }
+    });
 }
-updateComments(); 
+updateComments();
 
 commentForm.addEventListener('submit', function(event) {
     event.preventDefault(); 
@@ -62,7 +67,10 @@ delete_comment_form.addEventListener('submit', function(event) {
     .then(response => response.text())
     .then(() => {
         updateComments(); // Call the common function
+        child1.classList.toggle('HIDDEN');
+        child2.classList.toggle('HIDDEN');
     });
+
 });
 
 // update comment logic:
@@ -79,5 +87,11 @@ update_comment_form.addEventListener('submit', function(event) {
     .then(response => response.text())
     .then(() => {
         updateComments(); // Call the common function
+        child1.classList.toggle('HIDDEN');
+        child2.classList.toggle('HIDDEN');
     });
 });
+
+// 
+
+
