@@ -62,10 +62,12 @@ $objUser = mysqli_fetch_assoc($exe_current_user_q);
                     <a href="../dist/index2.php" class="w-full p-4 pl-10 my-2 text-2xl hover:cursor-pointer opacity-70">Home</a>
                 </div>
             </div>
+
             <form action="signout.php" method="post">
                 <button name="btnSO" class="text-start hover:opacity-70 w-full p-4 pl-10 my-2 text-red-500 font-bold text-xl">Sign Out</button>
             </form>
         </aside>
+
 
 
         <main class="absolute w-[80%] p-8 right-0">

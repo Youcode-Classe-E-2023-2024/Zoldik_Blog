@@ -40,7 +40,7 @@ if (isset($_GET['id'])) {
     }
 }
 
-header('Location: ' . ROOT_URL . 'admin/manage-categories.php');
+header('Location: ' . ROOT_URL . 'admin/categories.php');
 exit();
 ?>
 
