@@ -8,6 +8,14 @@ console.log(comments_section);
 console.log(comments_parent);
 console.log(commentForm);
 
+function scrollToElement(element) {
+    if (element) {
+        element.scrollIntoView({ block: 'start' });
+    } else {
+        console.warn(`Element "${element}" not found.`);
+    }
+}
+
 // Function to update comments and add event listeners
 function updateComments() {
     const formData = new FormData(); 
@@ -28,9 +36,10 @@ function updateComments() {
     
                 child1.classList.toggle('HIDDEN');
                 child2.classList.toggle('HIDDEN');
+                scrollToElement(comments_section);
             })
         }
-    });
+    })
 }
 updateComments();
 
@@ -51,6 +60,7 @@ const close_comment_section = document.getElementById('close_comment_section');
 close_comment_section.addEventListener('click', function() {
     child1.classList.toggle('HIDDEN');
     child2.classList.toggle('HIDDEN');
+    scrollToElement(comments_section);
 })
 
 // delete comment logic:
@@ -69,6 +79,7 @@ delete_comment_form.addEventListener('submit', function(event) {
         updateComments(); // Call the common function
         child1.classList.toggle('HIDDEN');
         child2.classList.toggle('HIDDEN');
+        scrollToElement(comments_section);
     });
 
 });
@@ -89,9 +100,6 @@ update_comment_form.addEventListener('submit', function(event) {
         updateComments(); // Call the common function
         child1.classList.toggle('HIDDEN');
         child2.classList.toggle('HIDDEN');
+        scrollToElement(comments_section);
     });
 });
-
-// 
-
-

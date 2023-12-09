@@ -87,9 +87,6 @@
       
                   Menu open: "hidden", Menu closed: "block"
                 -->
-                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
                 <!--
                   Icon when menu is open.
       
@@ -235,10 +232,15 @@
                                        $html .=<<<HEREDOC
                                           <div class="flex justify-between items-center border-b border-solid border-white p-2">
                                              <div class="flex items-center gap-2">
+                                                <div class="relative">
+                                                   <div class="w-12 h-12 rounded-full bg-black border-white absolute top-0 z-[-1] flex justify-center items-center">
+                                                      <ion-icon name="person" class="text-3xl"></ion-icon>
+                                                   </div>
                                                 <div class="w-12 h-12 rounded-full border-white" style="background-image:url('../images/{$user[6]}');background-size: cover;"></div>
-                                                <div>{$user[3]}</div>
-                                                </div>
-                                                <strong> {$rank[$i]} articles</strong>
+                                             </div>
+                                             <div>{$user[3]}</div>
+                                             </div>
+                                             <strong> {$rank[$i]} articles</strong>
                                           </div>
                                        HEREDOC;
                                     }
