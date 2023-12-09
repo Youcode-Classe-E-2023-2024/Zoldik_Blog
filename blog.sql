@@ -2,10 +2,12 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
+
 -- Host: 127.0.0.1
 -- Generation Time: Dec 07, 2023 at 04:35 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +20,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `blog`
+-- Base de données : `blog`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `articles`
+-- Structure de la table `articles`
 --
 
 CREATE TABLE `articles` (
@@ -33,13 +35,18 @@ CREATE TABLE `articles` (
   `body` text NOT NULL,
   `description` varchar(200) NOT NULL,
   `path` varchar(200) NOT NULL,
+
   `category_id` int(11) NOT NULL,
-  `author_id` int(11) NOT NULL
+  `author_id` int(11) NOT NULL,
+  `is_deleted` int(11) NOT NULL
+  
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `articles`
+-- Déchargement des données de la table `articles`
 --
+
 
 INSERT INTO `articles` (`id`, `title`, `body`, `description`, `path`, `category_id`, `author_id`) VALUES
 (1, 'green plante', '\"In the quiet of the morning, the sun painted the sky with hues of pink and gold. Birds chirped in harmony, creating a symphony of nature\'s awakening. A gentle breeze whispered through the leaves, carrying with it the promise of a new day filled with possibilities. As the world stirred from its slumber, the soft glow of dawn embraced everything in its tranquil warmth.\"', 'a healthy green plante', 'images/greenPlant.jpg', 1, 5),
@@ -47,10 +54,11 @@ INSERT INTO `articles` (`id`, `title`, `body`, `description`, `path`, `category_
 (3, 'MONSTER PC', '\"In the realm of pixels and polygons, PC gaming stands as a vibrant universe where fantasy meets technology. A custom-built rig hums with power, its illuminated components casting a soft glow in the dimly lit room. The click-clack of mechanical keys echoes in the air as a player immerses into the digital landscapes, navigating worlds with precision.  Graphics rendered in breathtaking detail, frame rates dancing at the edge of seamless reality, PC gaming is an odyssey of visual delight. The hum of cooling fans is the heartbeat of an epic adventure, where every click, every keystroke, propels the player deeper into the realms of virtual escapism.  Multiplayer battles unfold in real-time, connecting players across continents in a shared pursuit of victory. Discord channels become war rooms, strategy discussed in hushed tones as the glow of multiple monitors lights up faces in the quest for supremacy.  Mods and customization turn games into personal expressions, transforming virtual realms into unique playgrounds. From esports arenas to casual solo quests, the PC gaming community thrives on the diversity of experiences, a testament to the boundless creativity fueled by cutting-edge technology.  In this digital frontier, where frames per second matter as much as the plot twists, PC gaming is not just a hobby; it\'s a culture, a passion, a fusion of art and technology that unlocks the doors to limitless possibilities', 'THE BEST PC FOR YOU IS A GREAT CHOISE BELIEVE ME THERE NO GREAT OPTION THAT IT', 'images/pc.jpg', 2, 6),
 (4, 'mobiles', 'In the fast-paced world of mobile technology, we\'ve witnessed a remarkable journey from the days of bulky brick phones to the sleek and sophisticated foldable smartphones of today. The evolution of mobile devices has not only transformed the way we communicate but has also reshaped entire industries.\r\n\r\nThe Early Days: Brick Phones and Limited Connectivity\r\n\r\nIn the 1980s, mobile phones were synonymous with large, heavy \"brick\" devices. These early mobiles were primarily used for voice calls, and their limited battery life and bulky designs made them a luxury item. Connectivity was limited to basic voice communication, and the concept of sending text messages was still in its infancy.\r\n\r\nThe Rise of Smartphones: Touchscreens, Apps, and Connectivity\r\n\r\nThe 2000s marked a revolutionary era with the advent of smartphones. Devices like the BlackBerry and the iPhone introduced touchscreens, ushering in a new era of user interaction. App stores emerged, offering a plethora of applications that transformed smartphones into multipurpose devices. Mobile internet connectivity became faster and more widespread, enabling users to browse the web, check emails, and engage in social media.\r\n\r\nThe Era of High-Performance: Cameras, Processors, and AI\r\n\r\nAs smartphones became an integral part of our daily lives, manufacturers focused on enhancing performance and adding features. High-quality cameras, powerful processors, and artificial intelligence capabilities became standard, turning smartphones into powerful multimedia tools. The boundary between a phone and a professional camera blurred as mobile photography advanced significantly.\r\n\r\nFoldable Phones: Redefining Form and Function\r\n\r\nIn recent years, the industry has witnessed the introduction of foldable smartphones. These innovative devices feature flexible displays that can be folded or unfolded to provide users with a larger screen real estate when needed. Companies like Samsung, Huawei, and Motorola have embraced this technology, pushing the boundaries of what a smartphone can be.', '', 'images/mobile.jpg', 2, 4);
 
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Structure de la table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -59,17 +67,19 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `categories`
+-- Déchargement des données de la table `categories`
 --
 
 INSERT INTO `categories` (`id`, `category`) VALUES
 (1, 'bio'),
 (2, 'life style'),
-(3, 'tech');
+(4, 'ke,'),
+(6, 'aaaa');
 
 -- --------------------------------------------------------
 
 --
+
 -- Table structure for table `comments`
 --
 
@@ -468,6 +478,39 @@ INSERT INTO `comments` (`id`, `comment`, `commenter_id`, `time`) VALUES
 
 --
 -- Table structure for table `users`
+
+-- Structure de la table `password_reset_tokens`
+--
+
+CREATE TABLE `password_reset_tokens` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `password_reset_tokens`
+--
+
+INSERT INTO `password_reset_tokens` (`id`, `email`, `token`, `created_at`) VALUES
+(1, 'abdeslam.hannouni@gmail.com', 'e547248b1ddddb433960ea6d0c33b307f31df3e5438af5ef9c4d5dd12c3d273d', '2023-12-07 18:56:23'),
+(2, 'abdeslam.hannouni@gmail.com', '04e20d1ea128bf1c24a16a198b535cbc95c7b514fe1ac8ebd93c86f6c95ee5e0', '2023-12-07 18:56:27'),
+(3, 'abdeslam.hannouni@gmail.com', 'dcea1f2294b574efa496aaf2d2415cb2e3a24e5caab0edb45e6f32efd202084d', '2023-12-07 18:59:17'),
+(4, 'abdeslam.hannouni@gmail.com', 'f10b6a7a57dfccdd514a48666ce8461ed46d2cd2f1745c68529275e5002dfd55', '2023-12-07 19:12:12'),
+(5, 'abdeslam.hannouni@gmail.com', 'c35b5eb938fc6173ee3c2d6e933fcd37fdef8fd969d8db8e89185aebc920f23d', '2023-12-07 19:12:20'),
+(6, 'abdeslam.hannouni@gmail.com', 'd3be524a53a5821a2e18e9844bdec31645b579cf6d63193dda62a8aa1863c0ed', '2023-12-07 19:15:19'),
+(7, 'abdeslam.hannouni@gmail.com', 'f503490c94d4f7723e16c15b00d8e1f2322b64fcd0f3276c2192c1450415a142', '2023-12-07 19:46:02'),
+(8, 'abdeslam.hannouni@gmail.com', 'bc2cda72e1c5a0dba91e9bdbec7e436439f218ea27dac86490215a333fa6090b', '2023-12-07 19:51:43'),
+(9, 'abdeslam.hannouni@gmail.com', '37100398478920323f40180bb358f1ac96bb0e387bf272dfa41a9278d9af1249', '2023-12-07 19:53:33'),
+(10, 'abdeslam.hannouni@gmail.com', '77e068ccc5a82d184f0a36d2cee6f94ff37f399753d02e15a1227ac8b498c74f', '2023-12-07 19:58:16'),
+(11, 'abdeslam.hannouni@gmail.com', '556f15f1e979f5ba419ab548e2d63ed0598d7bdf99a9ea3d9ac05b3f055b0528', '2023-12-07 21:23:47');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+
 --
 
 CREATE TABLE `users` (
@@ -482,10 +525,11 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `email`, `password`, `avatar`, `is_admin`) VALUES
+
 (3, 'Mohammed', 'MESKI', 'MHD', 'mohammed@gmail.com', '$2y$10$bAgoqOGzCyQzulyaKwqnf.IS1PPUP7d01OV2lkK6gM6WRbAMKTbwS', 'uploads/', 0),
 (4, 'hamza', 'meski', 'HAMZA7onx', 'hamza@gmail.com', '$2y$10$fH0AW4DIR9/5LDz0yTD4C.elX0Fl78T54wK4Cs/1ehlX.sfwgqaUC', 'uploads/', 0),
 (5, 'moaad', 'meski', 'smart', 'moaad@gmail.com', '$2y$10$hFuCY6McmDuaqMlwtvxPt.hTpwx1tuoFHcGoHXYrawrR/mP/murYu', 'uploads/', 0),
@@ -493,23 +537,25 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `email`, `passwo
 (19, 'moaad', 'MOAAD', 'moaady', 'smart@gmail.com', '$2y$10$PfrUnf0eBEXWCXzDG2sVBe3wmVg5iPlsFcne9Bv4CPS5s87wjsXx6', 'uploads/younes.jpg', 0),
 (20, 'friend', 'friendex', 'friendy', 'friend@gmail.com', '$2y$10$ANJuINiIm56yrrfpkc/nQ.K5IPIlGssYK2jsGO59OYXHZAFR29gte', 'uploads/t1.png', 1);
 
+
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `articles`
+-- Index pour la table `articles`
 --
 ALTER TABLE `articles`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `categories`
+-- Index pour la table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+
 -- Indexes for table `comments`
 --
 ALTER TABLE `comments`
@@ -517,27 +563,37 @@ ALTER TABLE `comments`
 
 --
 -- Indexes for table `users`
+
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `articles`
+-- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
+
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
---
--- AUTO_INCREMENT for table `categories`
---
-ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT pour la table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT pour la table `password_reset_tokens`
+--
+ALTER TABLE `password_reset_tokens`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
@@ -548,6 +604,7 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

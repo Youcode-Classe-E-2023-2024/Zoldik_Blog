@@ -2,8 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9949d640-56df-41ee-b3bd-0ad0d2e3dbcd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Add Multiple/add_muliple.php" beforeDir="false" afterPath="$PROJECT_DIR$/Add Multiple/add_muliple.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Add Multiple/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/.idea/Add Multiple.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/add_muliple.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_muliple.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/delet_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/delet_process.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/edit_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit_process.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/json.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/json.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/AI.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/ann.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/baby.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/banny.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/body.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/cat.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/dg1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/dystopian-landscape-with-futuristic-city-people.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/planets-with-metallic-reflective-effect.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/t1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/wallpaperflare.com_wallpaper (5).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/younes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index2.php" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index2.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +59,12 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Zoldik_Blog" />
+      <recent name="C:\xampp\htdocs\Zoldik_Blog\admin" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -43,10 +75,22 @@
       <updated>1701770413846</updated>
       <workItem from="1701770416514" duration="15998000" />
       <workItem from="1701849765608" duration="10003000" />
+      <workItem from="1701943939459" duration="13914000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
