@@ -20,7 +20,7 @@ if (isset($_POST['btn'])) {
 <div class="container mx-auto mt-8">
     <div class="max-w-md mx-auto bg-white rounded p-8 shadow-md">
 
-        <form action="edit_process.php" method="post" enctype="multipart/form-data">
+        <form action="edit_user_process.php" method="post" enctype="multipart/form-data">
 
 
             <label for="profile-picture" class="cursor-pointer">
