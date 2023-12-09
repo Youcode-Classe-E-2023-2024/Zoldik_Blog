@@ -1,5 +1,4 @@
 <?php
-
    session_start();
    $logger_id = $_SESSION['user-id'];
 
@@ -14,7 +13,6 @@
    $sql = "SELECT * FROM `users`";
    $select_users = mysqli_query($conn, $sql);
    $users = mysqli_fetch_all($select_users);
-
 ?>
 
 <html lang="en">
@@ -76,84 +74,54 @@
 
 <body class="bg-gray-100 font-sans">
    <article id="ENCAPSULATER">
-      <nav id="NAV" class="m-auto bg-slate-800">
-         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div class="relative flex h-16 items-center justify-between">
-               <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                  <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                     <span class="absolute -inset-0.5"></span>
-                     <span class="sr-only">Open main menu</span>
-
-                     <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                     </svg>
-
-                     <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                     </svg>
-                  </button>
-               </div>
-               <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                  <div class="flex flex-shrink-0  items-center">
-                     <a href="index.html"><img class="h-12 w-auto" src="../image/LOGOO.png" alt="Your Company"></a>
-                  </div>
-                  <div class="hidden sm:ml-6 sm:block">
-                     <div class="flex space-x-4">
-                        <a href="/dist/index2.html" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
-                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Blog</a>
-                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                  <span class="absolute -inset-1.5"></span>
-                  <span class="sr-only">View notifications</span>
-                  </button>
-                  <div class="relative ml-3">
-                     <div>
-
-                        <button id="profileButton" type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 hover:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                           <span class="absolute -inset-1.5"></span>
-                           <span class="sr-only">Open user menu</span>
-                           <?php
-                           foreach ($users as $user) {
-                              if ($user[0] == $logger_id) {
-                                 $trns_id = $user[6];
-                              }
-                           }
-                           ?>
-                           <img class="h-8 w-8 rounded-full" src="../images/<?php echo $trns_id ?>" alt="">
-
-                        </button>
-                     </div>
-                     <!-- MENU LIST -->
-                     <div id="profileList" class="HIDDEN absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                        <a href="component.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Your Profile</a>
-                        <a href="mng_article.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Manage Article</a>
-                        <a href="dash.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Settings</a>
-
-                        <a href="index.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Sign out</a>
-                        <a href="../admin/index.php" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Dashboard</a>
-
-
-                     </div>
-                  </div>
-               </div>
+   <nav id="NAV" class="m-auto bg-slate-800">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <!-- Mobile menu button-->
+              <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <!--
+                  Icon when menu is closed.
+      
+                  Menu open: "hidden", Menu closed: "block"
+                -->
+                <!--
+                  Icon when menu is open.
+      
+                  Menu open: "block", Menu closed: "hidden"
+                  
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
             </div>
-         </div>
-         <!-- Mobile menu, show/hide based on menu state. -->
-         <div class="sm:hidden" id="mobile-menu">
-            <div class="space-y-1 px-2 pb-3 pt-2">
-               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-               <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
-               <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
-               <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
-               <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div class="flex flex-shrink-0  items-center">
+                <a href="index.html"><img class="h-12 w-auto" src="../image/LOGOO.png" alt="Your Company"></a>
+              </div>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                  <a href="index.html" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Blog</a>
+                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
+                </div>
+              </div>
             </div>
-         </div>
-         </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <div class="inline-flex items-center ml-5 space-x-6 lg:justify-end">
+                    <a href="../signin.php" class="text-base font-medium leading-6 text-fuchsia-50 whitespace-no-wrap transition duration-150 ease-in-out hover:text-gray-50">
+                        Sign in
+                    </a>
+                    <a href="../signup.php" class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-orange-700 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600">
+                        Sign up
+                    </a>
+                </div>  
+        </div>
       </nav>
-
       <!-- HOME PAGE -->
       <article class="grid grid-cols-6">
          <!-- categories section -->
@@ -191,7 +159,7 @@
                         <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:border-transparent hover:text-blue-500 hover:bg-gray-800 transition-all">Explorez notre blog</button>
                      </div>
                   </div>
-                  <form action="../dist/readmore1.php" method="post" class="grid grid-cols-2 gap-x-4 gap-y-8 px-2 py-6">
+                  <form action="../dist/readmore2.php" method="post" class="grid grid-cols-2 gap-x-4 gap-y-8 px-2 py-6">
                      <!-- FETCHING THE ARTICLES INTO THE CURRENT PAGE: -->
                      <?php
                        $html = '';
@@ -268,11 +236,11 @@
                                                    <div class="w-12 h-12 rounded-full bg-black border-white absolute top-0 z-[-1] flex justify-center items-center">
                                                       <ion-icon name="person" class="text-3xl"></ion-icon>
                                                    </div>
-                                                   <div class="w-12 h-12 rounded-full border-white" style="background-image:url('../images/{$user[6]}');background-size: cover;"></div>
-                                                </div>
-                                                <div>{$user[3]}</div>
-                                                </div>
-                                                <strong> {$rank[$i]} articles</strong>
+                                                <div class="w-12 h-12 rounded-full border-white" style="background-image:url('../images/{$user[6]}');background-size: cover;"></div>
+                                             </div>
+                                             <div>{$user[3]}</div>
+                                             </div>
+                                             <strong> {$rank[$i]} articles</strong>
                                           </div>
                                        HEREDOC;
                                     }
@@ -291,12 +259,6 @@
       </article>
    </article>
 </body>
-
-<script>
-   const profileButton = document.getElementById('profileButton');
-   const profileList = document.getElementById('profileList'); 
-   profileButton.addEventListener('click', () => profileList.classList.toggle('HIDDEN'));
-</script>
 
 <!-- drag_drop logic -->
 <script src="drag_drop.js"></script>
