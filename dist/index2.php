@@ -1,28 +1,42 @@
 <?php
-   session_start();
-   $logger_id = $_SESSION['user-id'];
+session_start();
 
-   // articles table
-   $conn = mysqli_connect('localhost', 'root', '', 'blog'); 
-   $sql = "SELECT * FROM `articles`"; 
-   $select_articles = mysqli_query($conn, $sql); 
-   $articles = mysqli_fetch_all($select_articles); 
+$conn = mysqli_connect('localhost', 'root', '', 'blog');
 
-   // users table
-   $conn = mysqli_connect('localhost', 'root', '', 'blog'); 
-   $sql = "SELECT * FROM `users`"; 
-   $select_users = mysqli_query($conn, $sql); 
-   $users = mysqli_fetch_all($select_users);
+// Check if it's an AJAX request for search
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search'])) {
+    $search = mysqli_real_escape_string($conn, $_POST['search']);
 
-   // echo 'articles <br>';
-   // echo '<pre>'; 
-   // print_r($articles);
-   // echo '</pre>';
+    // Perform a search query in the articles table based on the title
+    $sql = "SELECT * FROM `articles` WHERE `title` LIKE '%$search%'";
+    $result = mysqli_query($conn, $sql);
+    $searchedArticles = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-   // echo 'users <br>';
-   // echo '<pre>'; 
-   // print_r($users);
-   // echo '</pre>';
+    // Output the search results dynamically
+    foreach ($searchedArticles as $article) {
+        echo "<div class='CARD max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-lg'>";
+        echo "<img src='../{$article['path']}' alt='Article Image' class='w-full h-64 object-cover'>";
+        echo "<div class='p-6'>";
+        echo "<h1 class='text-3xl font-bold mb-2'>{$article['title']}</h1>";
+        echo "<p class='text-gray-950 font-bold'>" . substr($article['body'], 0, 200) . "...</p>";
+        echo "</div></div>";
+    }
+
+    // Terminate the script after handling the AJAX request
+    exit();
+}
+
+// If it's a regular page load, continue with the rest of your existing code below
+
+$sql = "SELECT * FROM `articles`";
+$select_articles = mysqli_query($conn, $sql);
+$articles = mysqli_fetch_all($select_articles);
+
+$sql = "SELECT * FROM `users`";
+$select_users = mysqli_query($conn, $sql);
+$users = mysqli_fetch_all($select_users);
+
+mysqli_close($conn);
 ?>
 <html lang="en">
    <head>
@@ -88,12 +102,12 @@
                         <span class="absolute -inset-1.5"></span>
                         <span class="sr-only">Open user menu</span>
                         <?php
-                           foreach($users as $user) {
-                              if($user[0] == $logger_id) {
-                                 $trns_id = $user[6];
-                                
+                          $logger_id = $_SESSION['user_id']; // Add this line to define $logger_id
+                          foreach ($users as $user) {
+                              if ($user[0] == $logger_id) {
+                                  $trns_id = $user[6];
                               }
-                           }
+                          }
                         ?>
                         <img class="h-8 w-8 rounded-full" src="../images/<?php echo $trns_id ?>" alt="">
                         </button>
@@ -140,30 +154,40 @@
             <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:border-transparent hover:text-blue-500 hover:bg-gray-800 transition-all">Explorez notre blog</button>
          </div>
       </div>
-      <form action="../dist/readmore1.php" method="post" class="grid grid-cols-2 gap-x-4 gap-y-8 px-2 py-6">
-         <?php
-            $html = '';
-            foreach ($articles as $article) {
-               foreach ($users as $user) {
-                  if ($article[6] == $user[0]) {
-                     $half = substr($article[2], 0, 200);
-                     $html .= <<<NOWDOC
-                     <button type="submit" name="myId" value="$user[0]"  key="$user[0]" class="CARD max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-lg">
-                           <img src="../$article[4]" alt="Article Image" class="w-full h-64 object-cover">
-                           <div class="p-6">
-                              <h1 class="text-3xl font-bold mb-2">$article[1]</h1>
-                              <p class="text-gray-950 font-bold"> $half...
-                              </p>
-                           </div>
-                     </button>
-                  NOWDOC;
-                  }
-               }
+
+<!-- HTML -->
+<form id="searchForm" class="flex justify-center mt-10 bg-gray-100">
+    <div class="relative text-gray-600">
+        <input class="border-4 border-gray-400 bg-white h-12 px-5 pr-16 rounded-full text-sm focus:outline-none"
+               type="search" name="search" id="search" placeholder="Search" oninput="searchArticles()">
+    </div>
+</form>
+
+<form action="../dist/readmore1.php" method="post" class="grid grid-cols-2 gap-x-4 gap-y-8 px-2 py-6" id="articlesList">
+    <?php
+    $html = ''; // Declare the $html variable before the loop
+
+    foreach ($articles as $article) {
+        foreach ($users as $user) {
+            if ($article[6] == $user[0]) {
+                $half = substr($article[2], 0, 200);
+                $html .= <<<NOWDOC
+                <button type="submit" name="myId" value="$user[0]"  key="$user[0]" class="CARD max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-lg">
+                    <img src="../$article[4]" alt="Article Image" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h1 class="text-3xl font-bold mb-2">$article[1]</h1>
+                        <p class="text-gray-950 font-bold"> $half...
+                        </p>
+                    </div>
+                </button>
+NOWDOC;
             }
-            echo $html;
-         ?>
-        
-         </form>
+        }
+    }
+
+    echo $html; // Now, $html is defined, and you can safely echo it
+    ?>
+</form>
       <!-- Page Wrap -->
       <!--Call to Action-->
       <section style="background-color: #3c4c55">
@@ -175,4 +199,23 @@
       </section>
    </body>
    <script src="/dist/script.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+ 
+   <script>
+    // JavaScript
+    function searchArticles() {
+        var searchInput = document.getElementById('search').value.toLowerCase();
+        var articles = document.getElementById('articlesList').getElementsByClassName('CARD');
+
+        for (var i = 0; i < articles.length; i++) {
+            var articleTitle = articles[i].querySelector('.text-3xl').innerText.toLowerCase();
+            var articleContent = articles[i].querySelector('.text-gray-950').innerText.toLowerCase();
+            var articleVisible = articleTitle.includes(searchInput) || articleContent.includes(searchInput);
+
+            articles[i].style.display = articleVisible ? 'block' : 'none';
+        }
+    }
+</script>
+</body>
 </html>
