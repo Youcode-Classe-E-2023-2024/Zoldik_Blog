@@ -17,7 +17,7 @@ if (isset($_POST['btn'])) {
             header('location: index.php');
         } else {
 
-            $uploadDir = '../uploads/';
+            $uploadDir = 'uploads/';
             $isadmin = 0; // announcer by default
 
             $originalFileName = $_FILES['avatar-' . $j]['name'];

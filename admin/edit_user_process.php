@@ -13,7 +13,7 @@ if (isset($_POST['save_btn'])) {
         $admin = 1;
     }
 
-    $uploadDir = '../uploads/';
+    $uploadDir = 'uploads/';
     $originalFileName = $_FILES['avatar']['name'];
     $uploadFile = $uploadDir . basename($originalFileName);
     move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);

@@ -2,41 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9949d640-56df-41ee-b3bd-0ad0d2e3dbcd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/.idea/Add Multiple.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/add_muliple.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_muliple.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/delet_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/delet_process.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/edit_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit_process.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/json.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/json.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/AI.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/ann.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/baby.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/banny.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/body.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/cat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/dg1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/dystopian-landscape-with-futuristic-city-people.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/planets-with-metallic-reflective-effect.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/t1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/wallpaperflare.com_wallpaper (5).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Add Multiple/uploads/younes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/add-category-logic.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add-category-logic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/add_muliple.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_muliple_users_process.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/delet_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/delete_user_process.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/edit-post.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit-post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/edit_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit_user_process.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index2.php" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/1701958083tnCutdREPv6Pa7atqb8MTxGW.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
@@ -76,6 +59,10 @@
       <workItem from="1701770416514" duration="15998000" />
       <workItem from="1701849765608" duration="10003000" />
       <workItem from="1701943939459" duration="13914000" />
+      <workItem from="1702030234061" duration="1358000" />
+      <workItem from="1702031637020" duration="17952000" />
+      <workItem from="1702062745661" duration="409000" />
+      <workItem from="1702119098461" duration="11580000" />
     </task>
     <servers />
   </component>
