@@ -26,6 +26,7 @@ function updateComments() {
     })
     .then(response => response.text())
     .then(data => {
+        console.log(data);
         comments_parent.innerHTML = data;
         const comment_setting = document.querySelectorAll('.comment_setting'); 
         for (const el of comment_setting) {

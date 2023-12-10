@@ -32,6 +32,7 @@
     foreach ($comments as $comment) {
         foreach($users as $user) {
             if($comment[2] == $user[0]) {
+                // print "{$comment[2]} == $logger_id && {$comment[3]} == {$_SESSION['current_article']} && {$_POST['oneTwo']} == 1 <br>";
                 if($comment[2] == $logger_id && $comment[3] == $_SESSION['current_article'] && $_POST['oneTwo'] == 1) {
                     $html .= <<<NOWDOC
                         <main class="p-6 text-base bg-white rounded-lg dark:bg-gray-900">
