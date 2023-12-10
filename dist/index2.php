@@ -191,6 +191,13 @@
                         <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:border-transparent hover:text-blue-500 hover:bg-gray-800 transition-all">Explorez notre blog</button>
                      </div>
                   </div>
+
+                  <form id="searchForm" class="flex justify-center mt-10 bg-gray-100">
+                     <div class="relative text-gray-600">
+                        <input class="border-4 border-gray-400 bg-white h-12 px-5 pr-16 rounded-full text-sm focus:outline-none"
+                                 type="search" name="search" id="search" placeholder="Search" oninput="searchArticles()">
+                     </div>
+                  </form>
                   <form action="../dist/readmore1.php" method="post" class="grid grid-cols-2 gap-x-4 gap-y-8 px-2 py-6">
                      <!-- FETCHING THE ARTICLES INTO THE CURRENT PAGE: -->
                      <?php
@@ -293,15 +300,49 @@
 </body>
 
 <script>
-   const profileButton = document.getElementById('profileButton');
-   const profileList = document.getElementById('profileList'); 
-   profileButton.addEventListener('click', () => profileList.classList.toggle('HIDDEN'));
+    function searchArticles() {
+        var searchInput = document.getElementById('search').value.toLowerCase();
+        var selectedCategory = document.querySelector('.CTGS.selected');
+        var categoryFilter = selectedCategory ? selectedCategory.getAttribute('key') : '';
+
+        var articles = document.querySelectorAll('.CARD');
+
+        articles.forEach(function (article) {
+            var articleTitle = article.querySelector('.text-3xl').innerText.toLowerCase();
+            var articleContent = article.querySelector('.text-gray-950').innerText.toLowerCase();
+            var articleCategory = article.getAttribute('category_id');
+
+            var titleMatch = articleTitle.includes(searchInput);
+            var contentMatch = articleContent.includes(searchInput);
+            var categoryMatch = categoryFilter === '' || categoryFilter === articleCategory;
+
+            var articleVisible = titleMatch || contentMatch;
+            articleVisible = articleVisible && categoryMatch;
+
+            article.style.display = articleVisible ? 'block' : 'none';
+        });
+    }
+
+    document.querySelectorAll('.CTGS').forEach(function (category) {
+        category.addEventListener('click', function () {
+            document.querySelectorAll('.CTGS').forEach(function (c) {
+                c.classList.remove('selected');
+            });
+            category.classList.add('selected');
+            searchArticles();
+        });
+    });
+
+    const profileButton = document.getElementById('profileButton');
+    const profileList = document.getElementById('profileList'); 
+    profileButton.addEventListener('click', () => profileList.classList.toggle('HIDDEN'));
 </script>
 
 <!-- drag_drop logic -->
 <script src="drag_drop.js"></script>
 <!-- comments logic -->
 <script src="script.js"></script>
+
 <!-- top bloggers logic -->
 <script src="topBloggers.js"></script>
 <!-- cat_filter logic -->
@@ -311,6 +352,8 @@
 <!-- ionicons cdn -->
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 
 </html>
 
