@@ -100,7 +100,7 @@
             </div>
             <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
               <div class="flex flex-shrink-0  items-center">
-                <a href="index.html"><img class="h-12 w-auto" src="../image/LOGOO.png" alt="Your Company"></a>
+                <a href="index.html"><img class="h-12 w-auto" src="image/LOGOO.png" alt="Your Company"></a>
               </div>
               <div class="hidden sm:ml-6 sm:block">
                 <div class="flex space-x-4">
@@ -113,10 +113,10 @@
             </div>
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <div class="inline-flex items-center ml-5 space-x-6 lg:justify-end">
-                    <a href="../signin.php" class="text-base font-medium leading-6 text-fuchsia-50 whitespace-no-wrap transition duration-150 ease-in-out hover:text-gray-50">
+                    <a href="signin.php" class="text-base font-medium leading-6 text-fuchsia-50 whitespace-no-wrap transition duration-150 ease-in-out hover:text-gray-50">
                         Sign in
                     </a>
-                    <a href="../signup.php" class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-orange-700 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600">
+                    <a href="signup.php" class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-orange-700 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600">
                         Sign up
                     </a>
                 </div>  
@@ -152,14 +152,14 @@
             <section id="index2global">
                <!-- child1 -->
                <section id="index2cnt">
-                  <div class="py-20 bg-cover bg-no-repeat bg-fixed" style="background-image: url(../image/e2.png)">
+                  <div class="py-20 bg-cover bg-no-repeat bg-fixed" style="background-image: url(image/e2.png)">
                      <div class="container m-auto text-center px-6 opacity-100">
                         <h2 class="text-4xl font-bold mb-2 text-white drop-shadow-[0_35px_35px_rgba(0,0,0,1)]">Chaque clic est une porte vers<br> un monde de possibilités dans le commerce électronique</h2>
                         <h3 class="text-2xl mb-8 text-gray-400 drop-shadow-[0_35px_35px_rgba(255,255,255,1)]">Clic d'expérience e-commerce</h3>
                         <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:border-transparent hover:text-blue-500 hover:bg-gray-800 transition-all">Explorez notre blog</button>
                      </div>
                   </div>
-                  <form action="../dist/readmore2.php" method="post" class="grid grid-cols-2 gap-x-4 gap-y-8 px-2 py-6">
+                  <form action="dist/readmore2.php" method="post" class="grid grid-cols-2 gap-x-4 gap-y-8 px-2 py-6">
                      <!-- FETCHING THE ARTICLES INTO THE CURRENT PAGE: -->
                      <?php
                        $html = '';
@@ -169,7 +169,7 @@
                                    $half = substr($article[2], 0, 200);
                                    $html .= <<<NOWDOC
                                        <button category_id="$article[5]" type="submit" name="article_id" value="$article[0]"  key="$user[0]" class="CARD max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-lg">
-                                               <img src="../images/$article[4]" alt="Article Image" class="w-full h-64 object-cover">
+                                               <img src="images/$article[4]" alt="Article Image" class="w-full h-64 object-cover">
                                                <div class="p-6">
                                                    <h1 class="text-3xl font-bold mb-2">$article[1]</h1>
                                                    <p class="text-gray-950 font-bold"> $half...
@@ -236,7 +236,7 @@
                                                    <div class="w-12 h-12 rounded-full bg-black border-white absolute top-0 z-[-1] flex justify-center items-center">
                                                       <ion-icon name="person" class="text-3xl"></ion-icon>
                                                    </div>
-                                                <div class="w-12 h-12 rounded-full border-white" style="background-image:url('../images/{$user[6]}');background-size: cover;"></div>
+                                                <div class="w-12 h-12 rounded-full border-white" style="background-image:url('images/{$user[6]}');background-size: cover;"></div>
                                              </div>
                                              <div>{$user[3]}</div>
                                              </div>
@@ -261,13 +261,13 @@
 </body>
 
 <!-- drag_drop logic -->
-<script src="drag_drop.js"></script>
+<script src="dist/drag_drop.js"></script>
 <!-- comments logic -->
-<script src="script.js"></script>
+<script src="dist/script.js"></script>
 <!-- top bloggers logic -->
-<script src="topBloggers.js"></script>
+<script src="dist/topBloggers.js"></script>
 <!-- cat_filter logic -->
-<script src="cat_filter.js"></script>
+<script src="dist/cat_filter.js"></script>
 <!-- tailwind cdn -->
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- ionicons cdn -->

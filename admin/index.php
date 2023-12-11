@@ -155,6 +155,16 @@ $objUser = mysqli_fetch_assoc($exe_current_user_q);
             // Perform your delete logic here or show a confirmation dialog
             var confirmDelete = confirm('Are you sure you want to delete user with ID ' + userId + '?');
 
+<<<<<<< HEAD
+                                if (confirmDelete) {
+                                    // Send AJAX request to delete_process.php
+                                    $.ajax({
+                                        url: 'delete_user_process.php',
+                                        method: 'POST',
+                                        data: { delete_btn: true, id_user: userId },
+                                        success: function(response) {
+                                            console.log(response);
+=======
             if (confirmDelete) {
                 $.ajax({
                     url: 'delete_user_process.php', // Corrected the file name
@@ -162,6 +172,7 @@ $objUser = mysqli_fetch_assoc($exe_current_user_q);
                     data: { delete_btn: true, id_user: userId },
                     success: function(response) {
                         console.log(response);
+>>>>>>> 7797a8ace1322d29edb7eaa0585d41832ff1f1b2
 
                         // Remove the row from the DataTable
                         usersTable.row($(this).closest('tr')).remove().draw();
