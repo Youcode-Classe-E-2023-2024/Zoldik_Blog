@@ -60,7 +60,7 @@ if(isset($_POST['submit'])){
                 } else {
                     $_SESSION['signup']= "file should be png, jpg or jpeg";
                 }
-            }
+            } 
         }
     }
     //redirect to signup page if there is a prblm

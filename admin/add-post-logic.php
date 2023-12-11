@@ -24,10 +24,10 @@ if(isset($_POST['submit'])){
         //work on thumbnail
         //rename the image 
         $time = time();//make each image name unique
-        $path_name =  $path['name'];
+        $path_name =  $time.$path['name'];
         $path_tmp_name = $path['tmp_name'];
-        $path_destination_path = 'images/' . $path_name;
-
+        $path_destination_path = '../images/' . $path_name;
+        
         //make sure file is an image
         $allowed_files = ['pnj', 'jpg', 'jpeg'];
         $extension = explode('.', $path_name);
@@ -35,6 +35,7 @@ if(isset($_POST['submit'])){
         if(in_array($extension, $allowed_files)) {
             //make sure image is not too big. (2mb+)
             if($path['size'] < 2_000_000) {
+                
                 move_uploaded_file($path_tmp_name, $path_destination_path);
             } else {
                 $_SESSION['add-post'] = "File size too big. should be less that 2mb";
@@ -52,7 +53,7 @@ if(isset($_POST['submit'])){
         }
 
             //insert posts into database
-            $query = "INSERT INTO articles (title, description, body, path, category_id, author_id) VALUES ('$title', '$description', '$body', '$path_destination_path', $category_id, $author_id)";
+            $query = "INSERT INTO articles (title, description, body, path, category_id, author_id) VALUES ('$title', '$description', '$body', '$path_name', $category_id, $author_id)";
 
             $result = mysqli_query($connection, $query);
 
