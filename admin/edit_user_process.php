@@ -11,9 +11,9 @@ if (isset($_POST['save_btn'])) {
 
     if ($_POST['is_admin'] == 'admin') {
         $admin = 1;
-    }
+    } 
 
-    $uploadDir = 'uploads/';
+    $uploadDir = '../images/';
     $originalFileName = $_FILES['avatar']['name'];
     $uploadFile = $uploadDir . basename($originalFileName);
     move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);

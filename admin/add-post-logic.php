@@ -24,9 +24,9 @@ if(isset($_POST['submit'])){
         //work on thumbnail
         //rename the image 
         $time = time();//make each image name unique
-        $path_name = $time . $path['name'];
+        $path_name =  $path['name'];
         $path_tmp_name = $path['tmp_name'];
-        $path_destination_path = '../images/' . $path_name;
+        $path_destination_path = 'images/' . $path_name;
 
         //make sure file is an image
         $allowed_files = ['pnj', 'jpg', 'jpeg'];

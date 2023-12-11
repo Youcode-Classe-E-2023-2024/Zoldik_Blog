@@ -7,6 +7,7 @@
       <change afterPath="$PROJECT_DIR$/images/1702306092ex2.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/images/1702306526pxfuel1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/admin/add-post-logic.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add-post-logic.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/articles.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/categories.php" afterDir="false" />
@@ -14,6 +15,9 @@
       <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/script.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/signout.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/signout.php" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/dist/index2.php" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index2.php" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
