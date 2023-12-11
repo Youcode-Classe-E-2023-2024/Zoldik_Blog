@@ -24,31 +24,30 @@ foreach ($rslt as $value) {
         <div class="bg-white p-8 rounded-lg shadow-md w-96">
             <div class="text-center mb-4">
                 <label for="profile-picture" class="cursor-pointer">
-                    <img id="preview" src="../images/<?= $value['avatar'];?>" alt="Profile Picture" class="rounded-full w-20 h-20 mx-auto mb-2 my-6">
+                    <img id="preview" src="../images/<?= $value['avatar'];?>" alt="Profile Picture" class="rounded-full w-20 h-20 mx-auto mb-2">
                 </label>
                 <h2 class="text-xl font-bold text-gray-800"><?= $value['firstname'] . ' ' . $value['lastname']; ?> | <span class="text-gray-500 text-sm"><?= $value['email'] ?></h2>
-                <p class="text-gray-500 text-green-500"> <?php echo $value['is_admin'] === 0 ? 'Admin' : 'Announcer'; ?> </p>
+                <p class="text-gray-500 text-green-500"> <?php echo $value['is_admin'] == 1 ? 'Admin' : 'Announcer'; ?> </p>
             </div>
 
             <div class="mb-4">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="edit-profile-process.php" method="post" enctype="multipart/form-data">
                     <h3 class="text-lg font-semibold mb-2">Profile Information</h3>
-
                     <div class="mb-4">
                         <label for="username" class="block text-sm font-medium text-gray-600">First Name</label>
-                        <input type="text" id="username" name="fname" value="<?= $value['firstname']; ?>" class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300">
+                        <input type="text" id="username" name="firstname" value="<?= $value['firstname']; ?>" class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300">
                     </div>
                     <div class="mb-4">
                         <label for="email" class="block text-sm font-medium text-gray-600">Last Name</label>
-                        <input type="text" id="email" name="lname" value="<?= $value['lastname']; ?>" class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300">
+                        <input type="text"  name="lastname" value="<?= $value['lastname']; ?>" class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300">
                     </div>
                     <div class="mb-4">
                         <label for="email" class="block text-sm font-medium text-gray-600">Username</label>
-                        <input type="text" id="email" name="lname" value="<?= $value['username']; ?>" class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300">
+                        <input type="text" name="username" value="<?= $value['username']; ?>" class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300">
                     </div>
                     <div class="mb-4">
                         <label for="email" class="block text-sm font-medium text-gray-600">Email</label>
-                        <input type="text" id="email" name="lname" value="<?= $value['email']; ?>" class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300">
+                        <input type="email" name="email" value="<?= $value['email']; ?>" class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300">
                     </div>
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-600">Want to Set a New Password ?</label>
@@ -62,7 +61,9 @@ foreach ($rslt as $value) {
                         <label for="newPassword" class="block text-sm font-medium text-gray-600">New Password</label>
                         <input type="password" id="newPassword" name="newPassword" class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300">
                     </div>
-
+                    <button name="btn" type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">Save Changes</button>
+                    <input type="file" value="<?= $value['avatar'];?>" id="profile-picture" name="photo" class="hidden" accept="image/*" onchange="previewImage()">
+                    <input type="hidden" name="currentPhoto" value="<?= $value['avatar']; ?>">
                 </form>
             </div>
         </div>

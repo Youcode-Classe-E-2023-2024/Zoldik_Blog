@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9949d640-56df-41ee-b3bd-0ad0d2e3dbcd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/dist/edit-profile-process.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/categories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/dist/profile.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +57,7 @@
       <workItem from="1702031637020" duration="17952000" />
       <workItem from="1702062745661" duration="409000" />
       <workItem from="1702119098461" duration="11580000" />
-      <workItem from="1702318537447" duration="5883000" />
+      <workItem from="1702318537447" duration="12733000" />
     </task>
     <servers />
   </component>
