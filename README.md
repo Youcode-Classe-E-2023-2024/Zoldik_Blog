@@ -1,6 +1,6 @@
 # Blog d'Entreprise Avito
 
-!(https://C:\Users\youco\OneDrive\Documents\home_page.png)
+!(![Uploading image.png…]())
 
 Bienvenue dans le blog d'entreprise d'Avito, votre source d'informations sur les technologies émergentes, les meilleures pratiques de développement et bien plus encore.
 
@@ -8,12 +8,8 @@ Bienvenue dans le blog d'entreprise d'Avito, votre source d'informations sur les
 
 - [Description](#description)
 - [Fonctionnalités](#fonctionnalités)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Utilisation](#utilisation)
-- [Contribuer](#contribuer)
+- [Base de données](#base de données)
 - [Auteurs](#auteurs)
-- [Licence](#licence)
 
 ## Description
 
@@ -25,13 +21,13 @@ L'entreprise Avito a lancé ce blog d'entreprise dans le but de partager des inf
 
 2. ### Diagramme de cas d'utilisation
 
-3.  ![Diagramme de Cas d'Utilisation](C:\xampp\htdocs\Zoldik_Blog\UML\uml use case diagram.png)
+3.  ![Diagramme de Cas d'Utilisation](![image](https://github.com/Youcode-Classe-E-2023-2024/Zoldik_Blog/assets/132862036/e69059c6-4172-47bd-b4cf-1c4841e07e5d))
 4. 
 5. Le diagramme de cas d'utilisation est particulièrement utile pour décrire les interactions entre les acteurs externes et le système. Il identifie les fonctionnalités du système sous la forme de cas d'utilisation et montre comment différents acteurs interagissent avec ces cas d'utilisation.
 
    ### Diagramme de cas d'utilisation
 
-3.  ![Diagramme de Classe](C:\xampp\htdocs\Zoldik_Blog\UML\uml class diagram.png)
+3.  ![Diagramme de Classe](![image](https://github.com/Youcode-Classe-E-2023-2024/Zoldik_Blog/assets/132862036/f1f3d32e-5827-4c3c-a7aa-07762e73f7a7))
 4. 
 5. Le diagramme de classe représente la structure statique du système, montrant les classes, les attributs, les méthodes et les relations entre les classes.
 
