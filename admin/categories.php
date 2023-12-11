@@ -97,8 +97,7 @@ $categories = mysqli_query($connection, $query);
                             <?php while($category = mysqli_fetch_assoc($categories)) : ?>
                             <tr class="hover:bg-gray-100">
                                 <td class="py-2 px-4 border-b"><?= $category['category'] ?></td>
-                                <td class="py-2 px-4 border-b"><a href="<?= ROOT_URL ?>admin/edit-category.php?id=<?= $category
-                                ['id'] ?>" class="text-blue-500">Edit</a></td>
+                                <td class="py-2 px-4 border-b"><a href="<?= ROOT_URL ?>admin/edit-category.php?id=<?= $category['id'] ?>" class="text-blue-500">Edit</a></td>
                                 <td class="py-2 px-4 border-b"><a href="<?= ROOT_URL ?>admin/delete-category.php?id=<?= $category
                                 ['id'] ?>" class="text-red-500">Delete</a></td>
                             </tr>
