@@ -162,7 +162,7 @@ $comments = mysqli_fetch_all($select_comments);
                     <form id="commentForm">
                         <div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                             <label class="sr-only text-black">Your comment</label>
-                            <textarea name="comment" class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800" placeholder="Write a comment..." required>
+                            <textarea id="commentInput" name="comment" class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800" placeholder="Write a comment..." required>
                                 </textarea>
                         </div>
                         <input type="hidden" name="article_id" value="<?php echo $_POST['article_id'] ?>">

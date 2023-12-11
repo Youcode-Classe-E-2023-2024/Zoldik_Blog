@@ -71,6 +71,12 @@
          overflow: auto;
          font-family: 'Dancing Script', cursive;
       }
+      #cat_title {
+         margin-top: 400px;
+      }
+      #darg_parent {
+         /* margin-bottom: 200px; */
+      }
    </style>
 </head>
 
@@ -157,8 +163,8 @@
       <!-- HOME PAGE -->
       <article class="grid grid-cols-6">
          <!-- categories section -->
-         <main id="categoriesSct" class="col-span-1  px-2 flex flex-col justify-center text-2xl">
-            <h1 class="font-bold text-2xl">Categories:</h1>
+         <main id="categoriesSct" class="col-span-1 px-2 flex flex-col justify-center text-2xl">
+            <h1 id="cat_title" class="font-bold text-2xl">Categories:</h1>
             <!-- categories container -->
             <div id="darg_parent" ondrop="drop(event)" ondragover="allowDrop(event)">
                <!-- <button class="bg-green-400 border-b border-solid border-black py-2 cursor-pointer">Technologies</button> -->
