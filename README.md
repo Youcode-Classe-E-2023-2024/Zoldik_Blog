@@ -1,6 +1,6 @@
 # Blog d'Entreprise Avito
 
-!(https://github.com/Youcode-Classe-E-2023-2024/Zoldik_Blog/assets/132862036/f671ccf3-118f-4b13-b254-d68248f79c71))
+![Home_page](https://github.com/Youcode-Classe-E-2023-2024/Zoldik_Blog/assets/132862036/f671ccf3-118f-4b13-b254-d68248f79c71)
 
 Bienvenue dans le blog d'entreprise d'Avito, votre source d'informations sur les technologies émergentes, les meilleures pratiques de développement et bien plus encore.
 
