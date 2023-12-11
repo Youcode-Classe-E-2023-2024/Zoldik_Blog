@@ -53,8 +53,6 @@ L'entreprise Avito a lancé ce blog d'entreprise dans le but de partager des inf
 
 ### Bonus
 
-- **Mailing (Forgot Password)**: Fonctionnalité d'envoi de courriels pour la réinitialisation de mot de passe.
-
 - **Drag and Drop**: Prise en charge du glisser-déposer pour une meilleure expérience utilisateur.
 
 
