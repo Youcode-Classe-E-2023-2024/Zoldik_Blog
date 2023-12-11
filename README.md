@@ -21,7 +21,7 @@ L'entreprise Avito a lancé ce blog d'entreprise dans le but de partager des inf
 
 2. ### Diagramme de cas d'utilisation
 
-3.  ![Diagramme de Cas d'Utilisation](![image](https://github.com/Youcode-Classe-E-2023-2024/Zoldik_Blog/assets/132862036/e69059c6-4172-47bd-b4cf-1c4841e07e5d))
+3.  ![Diagramme de Cas d'Utilisation](https://github.com/Youcode-Classe-E-2023-2024/Zoldik_Blog/assets/132862036/e69059c6-4172-47bd-b4cf-1c4841e07e5d)
 4. 
 5. Le diagramme de cas d'utilisation est particulièrement utile pour décrire les interactions entre les acteurs externes et le système. Il identifie les fonctionnalités du système sous la forme de cas d'utilisation et montre comment différents acteurs interagissent avec ces cas d'utilisation.
 
