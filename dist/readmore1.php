@@ -112,9 +112,8 @@ $comments = mysqli_fetch_all($select_comments);
                      <!-- MENU LIST -->
                      <div id="profileList" class="HIDDEN absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                         <a href="component.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Your Profile</a>
-                        <a href="mng_article.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Manage Article</a>
-                        <a href="dash.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Settings</a>
-                        <a href="index.php" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Sign out</a>
+                        <a href="../admin/index.php" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Dashboard</a>
+                        <a href="../dist/index.php" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Sign out</a>
                      </div>
                   </div>
                </div>
@@ -140,7 +139,7 @@ $comments = mysqli_fetch_all($select_comments);
                     if ($article[0] == $_POST['article_id']) {
                         $html .= <<<NOWDOC
                                <div class="CARD max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-lg">
-                                     <img src="../$article[4]" alt="Article Image" class="w-full h-64 object-cover">
+                                     <img src="../images/$article[4]" alt="Article Image" class="w-full h-64 object-cover">
                                      <div class="p-6">
                                         <h1 class="text-3xl font-bold mb-2">$article[1]</h1>
                                         <p class="text-gray-950 font-bold"> $article[2]
@@ -170,7 +169,7 @@ $comments = mysqli_fetch_all($select_comments);
                         <button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center bg-blue-600 ">
                             Post comment
                         </button>
-                    </form>
+                    </form> 
                     <!--  -->
                     <div key="1" id="comments_parent">
 

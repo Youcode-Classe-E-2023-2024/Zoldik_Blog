@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
     } else {
         //delete existing path if a new path is available
         if ($path['name']) {
-            $previous_path_path = 'images/' . $previous_path_name;
+            $previous_path_path = '../images/' . $previous_path_name;
             if (file_exists($previous_path_path)) {
                 unlink($previous_path_path);
             }
@@ -27,14 +27,14 @@ if (isset($_POST['submit'])) {
             $time = time(); // make each image name upload using the current timestamp
             $path_name = $time . $path['name'];
             $path_tmp_name = $path['tmp_name'];
-            $path_destination_path = 'images/' . $path_name;
+            $path_destination_path = $path_name;
 
             // make sure the file is an image
             $allowed_files = ['png', 'jpg', 'jpeg'];
             $extension = pathinfo($path_name, PATHINFO_EXTENSION);
             if (in_array($extension, $allowed_files)) {
+                move_uploaded_file($path_tmp_name, $path_destination_path);
                 if ($path['size'] < 2000000) {
-                    move_uploaded_file($path_tmp_name, $path_destination_path);
                 } else {
                     $_SESSION['edit-post'] = "Couldn't update post. path size too big.";
                 }

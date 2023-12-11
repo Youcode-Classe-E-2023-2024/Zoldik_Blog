@@ -118,7 +118,6 @@
                   </button>
                   <div class="relative ml-3">
                      <div>
-
                         <button id="profileButton" type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 hover:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                            <span class="absolute -inset-1.5"></span>
                            <span class="sr-only">Open user menu</span>
@@ -127,7 +126,7 @@
                               if ($user[0] == $logger_id) {
                                  $trns_id = $user[6];
                               }
-                           }
+                           } 
                            ?>
                            <img class="h-8 w-8 rounded-full" src="../images/<?php echo $trns_id ?>" alt="">
 
@@ -136,17 +135,8 @@
                      <!-- MENU LIST -->
                      <div id="profileList" class="HIDDEN absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                         <a href="component.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Your Profile</a>
-                        <a href="mng_article.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Manage Article</a>
-                        <a href="dash.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Settings</a>
-
-                        <a href="../dist/index.php" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Sign out</a>
-                         <?php
-                         if (isset($_SESSION['user_is_admin']) && $_SESSION['user_is_admin'] === true) {
-                         ?>
                         <a href="../admin/index.php" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Dashboard</a>
-                         <?php } else { ?>
-                             <a href="../admin/add-post.php" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Add Article</a>
-                         <?php } ?>
+                        <a href="../dist/index.php" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Sign out</a>
                      </div>
                   </div>
                </div>
@@ -219,7 +209,7 @@
                                    $half = substr($article[2], 0, 200);
                                    $html .= <<<NOWDOC
                                        <button category_id="$article[5]" type="submit" name="article_id" value="$article[0]"  key="$user[0]" class="CARD max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-lg">
-                                               <img src="../$article[4]" alt="Article Image" class="w-full h-64 object-cover">
+                                               <img src="../images/$article[4]" alt="Article Image" class="w-full h-64 object-cover">
                                                <div class="p-6">
                                                    <h1 class="text-3xl font-bold mb-2">$article[1]</h1>
                                                    <p class="text-gray-950 font-bold"> $half...

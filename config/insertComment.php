@@ -6,7 +6,7 @@
 
 <?php 
     session_start();
-    $logger_id = $_SESSION['user-id'];
+    @$logger_id = $_SESSION['user-id'];
     // Create connection
     $conn = mysqli_connect('localhost', 'root', '', 'blog');
     $comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_SPECIAL_CHARS);

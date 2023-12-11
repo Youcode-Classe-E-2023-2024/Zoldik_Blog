@@ -1,6 +1,6 @@
 <?php
     session_start(); 
-    $logger_id = $_SESSION['user-id'];
+    @$logger_id = $_SESSION['user-id'];
     $_SESSION['current_article'] = $_POST['article_id'];
     // articles table
     $conn = mysqli_connect('localhost', 'root', '', 'blog'); 
@@ -95,7 +95,7 @@
                             if ($article[0] == $_POST['article_id'] ) {
                                $html .= <<<NOWDOC
                                <div class="CARD max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-lg">
-                                     <img src="../$article[4]" alt="Article Image" class="w-full h-64 object-cover">
+                                     <img src="../images/$article[4]" alt="Article Image" class="w-full h-64 object-cover">
                                      <div class="p-6">
                                         <h1 class="text-3xl font-bold mb-2">$article[1]</h1>
                                         <p class="text-gray-950 font-bold"> $article[2]

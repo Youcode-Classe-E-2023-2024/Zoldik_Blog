@@ -1,8 +1,10 @@
 const commentInput = document.getElementById('commentInput');
-function emptyComment() {
-    commentInput.value = '';
+if(commentInput) {
+    function emptyComment() {
+        commentInput.value = '';
+    }
+    emptyComment();
 }
-emptyComment();
 
 const comments_section = document.getElementById('comments_section');
 const comments_parent = document.getElementById('comments_parent'); 
@@ -60,7 +62,7 @@ commentForm.addEventListener('submit', function(event) {
     .then(response => response.text())
     .then(() => {
         updateComments(); // Call the common function
-        emptyComment();
+        if(emptyComment) emptyComment();
     });
 });
 
