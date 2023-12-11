@@ -1,6 +1,9 @@
 <?php
 
    session_start();
+if (!isset($_SESSION['user-id'])) {
+    header('location: ../index.php');
+}
    $logger_id = $_SESSION['user-id'];
 
    // articles table
@@ -136,7 +139,13 @@
                      <div id="profileList" class="HIDDEN absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                         <a href="profile.php" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Your Profile</a>
                         <a href="../admin/index.php" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Dashboard</a>
-                        <a href="../index.php" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Sign out</a>
+                         <form action="index2.php" method="post">
+                             <button name="btnSO" class="text-start hover:opacity-70 w-full p-4 pl-10 my-2 text-red-500 font-bold text-xl ">Sign Out</button>
+                         </form>
+                         <?php if (isset($_POST['btnSO'])) {
+                             unset($_SESSION['user-id']);
+                             header('location: ../index.php');
+                         } ?>
                      </div>
                   </div>
                </div>
