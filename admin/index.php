@@ -158,7 +158,7 @@ $objUser = mysqli_fetch_assoc($exe_current_user_q);
                                 if (confirmDelete) {
                                     // Send AJAX request to delete_process.php
                                     $.ajax({
-                                        url: 'delet_process.php',
+                                        url: 'delete_user_process.php',
                                         method: 'POST',
                                         data: { delete_btn: true, id_user: userId },
                                         success: function(response) {
