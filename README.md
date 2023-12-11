@@ -1,6 +1,6 @@
 # Blog d'Entreprise Avito
 
-!(![Uploading image.png…]())
+!(https://github.com/Youcode-Classe-E-2023-2024/Zoldik_Blog/assets/132862036/f671ccf3-118f-4b13-b254-d68248f79c71))
 
 Bienvenue dans le blog d'entreprise d'Avito, votre source d'informations sur les technologies émergentes, les meilleures pratiques de développement et bien plus encore.
 
@@ -27,7 +27,7 @@ L'entreprise Avito a lancé ce blog d'entreprise dans le but de partager des inf
 
    ### Diagramme de cas d'utilisation
 
-3.  ![Diagramme de Classe](![image](https://github.com/Youcode-Classe-E-2023-2024/Zoldik_Blog/assets/132862036/f1f3d32e-5827-4c3c-a7aa-07762e73f7a7))
+3.  ![Diagramme de Classe](https://github.com/Youcode-Classe-E-2023-2024/Zoldik_Blog/assets/132862036/f1f3d32e-5827-4c3c-a7aa-07762e73f7a7)
 4. 
 5. Le diagramme de classe représente la structure statique du système, montrant les classes, les attributs, les méthodes et les relations entre les classes.
 
