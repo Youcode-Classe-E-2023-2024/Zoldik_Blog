@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9949d640-56df-41ee-b3bd-0ad0d2e3dbcd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/add-category-logic.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add-category-logic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/add_muliple.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_muliple_users_process.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/delet_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/delete_user_process.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/edit-post.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit-post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/edit_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit_user_process.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1701958083tnCutdREPv6Pa7atqb8MTxGW.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index2.php" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index2.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
