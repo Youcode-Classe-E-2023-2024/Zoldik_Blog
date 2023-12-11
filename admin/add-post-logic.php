@@ -58,7 +58,11 @@ if(isset($_POST['submit'])){
 
             if(!mysqli_errno($connection)) {
                 $_SESSION['add-post-success'] = "New post added successfully";
-                header('location: ' . ROOT_URL . 'admin/');
+                if (isset($_SESSION['user_is_admin']) && $_SESSION['user_is_admin'] === true) {
+                    header('location: ' . ROOT_URL . 'admin/');
+                } else {
+                    header('location: ' . ROOT_URL . 'dist/index2.php');
+                }
                 die();
             }
         }
