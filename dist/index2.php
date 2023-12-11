@@ -65,6 +65,7 @@
          z-index: 1000; /* Adjust the value based on your layout */
       }
       #categoriesSct {
+         margin-top: 0px;
          height: 100vh;
          background-color: #2e72a2;
          /* backdrop-filter: blur(30px); */
@@ -72,7 +73,7 @@
          font-family: 'Dancing Script', cursive;
       }
       #cat_title {
-         margin-top: 400px;
+         /* margin-top: 400px; */
       }
       #darg_parent {
          /* margin-bottom: 200px; */
@@ -138,7 +139,7 @@
                         <a href="mng_article.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Manage Article</a>
                         <a href="dash.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Settings</a>
 
-                        <a href="index.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Sign out</a>
+                        <a href="../dist/index.php" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Sign out</a>
                          <?php
                          if (isset($_SESSION['user_is_admin']) && $_SESSION['user_is_admin'] === true) {
                          ?>
@@ -167,10 +168,10 @@
       <!-- HOME PAGE -->
       <article class="grid grid-cols-6">
          <!-- categories section -->
-         <main id="categoriesSct" class="col-span-1 px-2 flex flex-col justify-center text-2xl">
+         <main id="categoriesSct" class="col-span-1 px-2">
             <h1 id="cat_title" class="font-bold text-2xl">Categories:</h1>
             <!-- categories container -->
-            <div id="darg_parent" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div id="darg_parent" ondrop="drop(event)" ondragover="allowDrop(event)" class="flex flex-col justify-center text-2xl">
                <!-- <button class="bg-green-400 border-b border-solid border-black py-2 cursor-pointer">Technologies</button> -->
                <?php
                   // categories table

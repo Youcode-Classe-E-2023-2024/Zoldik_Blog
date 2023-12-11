@@ -24,9 +24,9 @@ if(isset($_POST['submit'])){
         //work on thumbnail
         //rename the image 
         $time = time();//make each image name unique
-        $path_name = $time . $path['name'];
+        $path_name =  $path['name'];
         $path_tmp_name = $path['tmp_name'];
-        $path_destination_path = '../images/' . $path_name;
+        $path_destination_path = 'images/' . $path_name;
 
         //make sure file is an image
         $allowed_files = ['pnj', 'jpg', 'jpeg'];
@@ -58,7 +58,11 @@ if(isset($_POST['submit'])){
 
             if(!mysqli_errno($connection)) {
                 $_SESSION['add-post-success'] = "New post added successfully";
-                header('location: ' . ROOT_URL . 'admin/');
+                if (isset($_SESSION['user_is_admin']) && $_SESSION['user_is_admin'] === true) {
+                    header('location: ' . ROOT_URL . 'admin/');
+                } else {
+                    header('location: ' . ROOT_URL . 'dist/index2.php');
+                }
                 die();
             }
         }
