@@ -77,24 +77,7 @@ $categories = mysqli_query($connection, $query);
         <?php endif ?>
     <div class="font-sans bg-gray-100 flex justify-center items-center min-h-screen mt-20 mx-8">
         <div class="container mx-auto flex">
-    
-            <!-- Sidebar/Aside -->
-            <aside class="bg-gray-800 text-white h-screen w-1/5 p-4">
-                <div class="mb-8">
-                    <h1 class="text-2xl font-bold">Dashboard</h1>
-                </div>
-                <nav>
-                    <a href="add-post.php" class="block py-2 text-white hover:bg-gray-700">Add Post</a>
-                    <a href="index.php" class="block py-2 text-white hover:bg-gray-700">Manage Posts</a>
-                    <?php if(isset($_SESSION['user_is_admin'])): ?>
-                    <a href="add-user.php" class="block py-2 text-white hover:bg-gray-700">Add User</a>
-                    <a href="manage-users.php" class="block py-2 text-white hover:bg-gray-700">Manage Users</a>
-                    <a href="add-category.php" class="block py-2 text-white hover:bg-gray-700">Add Category</a>
-                    <a href="manage-categories.php" class="block py-2 text-white hover:bg-gray-700 ">Manage Categories</a>
-                    <?php endif ?>
-                </nav>
-            </aside>
-    
+
             <!-- Main Content -->
             <main class="flex-1 p-8 text-center">
                 
