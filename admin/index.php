@@ -3,7 +3,7 @@ include '../config/database.php';
 if (!isset($_SESSION['user-id'])) {
     header('location: ../dist/index.php');
 }
-$query = "SELECT id, title, description, category_id FROM articles WHERE is_deleted = 0";
+$query = "SELECT * FROM articles WHERE is_deleted = 0";
 $posts = mysqli_query($connection, $query);
 $query_select_users = "SELECT * FROM users";
 $exe_query_s_u = mysqli_query($connection, $query_select_users);
@@ -54,7 +54,7 @@ $objUser = mysqli_fetch_assoc($exe_current_user_q);
                     <a href="categories.php" class="w-full p-4 pl-10 my-2 text-2xl hover:cursor-pointer opacity-70 hover:opacity-100">Manage Categories</a>
                 </div>
                 <p class="w-full p-4 pl-10 my-2 text-2xl hover:cursor-pointer " onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">Add Users</p>
-                <p class="w-full p-4 pl-10 my-2 text-2xl hover:cursor-pointer opacity-70 hover:opacity-100">Manage Articles</p>
+                <p class="w-full p-4 pl-10 my-2 text-2xl hover:cursor-pointer" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">Manage Articles</p>
                 <?php } ?>
                 <div class="my-4">
                     <a href="add-post.php" class="w-full p-4 pl-10 my-2 text-2xl hover:cursor-pointer opacity-70 hover:opacity-100">Add Article</a>
@@ -274,6 +274,7 @@ $objUser = mysqli_fetch_assoc($exe_current_user_q);
                                     <table class="w-full border-collapse border rounded-lg overflow-hidden mx-auto">
                                         <thead class="bg-gray-50">
                                         <tr>
+                                            <th class="py-2 px-4 border-b">Profile</th>
                                             <th class="py-2 px-4 border-b">Title</th>
                                             <th class="py-2 px-4 border-b">Category</th>
                                             <th class="py-2 px-4 border-b">Description</th>
@@ -291,6 +292,7 @@ $objUser = mysqli_fetch_assoc($exe_current_user_q);
                                             $category = mysqli_fetch_assoc($category_result);
                                             ?>
                                             <tr class="hover:bg-gray-100">
+                                                <td class="py-2 px-4 border-b"><img src="<?= $post['path'] ?>" class="rounded-lg h-36 w-36"></td>
                                                 <td class="py-2 px-4 border-b"><?= $post['title'] ?></td>
                                                 <td class="py-2 px-4 border-b"><?= $category['category'] ?></td>
                                                 <td class="py-2 px-4 border-b"><?= $post['description'] ?></td>
@@ -311,7 +313,7 @@ $objUser = mysqli_fetch_assoc($exe_current_user_q);
                             </section>
                             <?php } else {
                                 $author_id = $_SESSION['user-id'];
-                                $author_articles_query = "SELECT id, title, description, category_id FROM articles WHERE is_deleted = 0 AND author_id = $author_id";
+                                $author_articles_query = "SELECT * FROM articles WHERE is_deleted = 0 AND author_id = $author_id";
                                 $author_articles= mysqli_query($connection, $author_articles_query);
                             ?>
                                 <section>
@@ -320,6 +322,7 @@ $objUser = mysqli_fetch_assoc($exe_current_user_q);
                                         <table class="w-full border-collapse border rounded-lg overflow-hidden mx-auto">
                                             <thead class="bg-gray-50">
                                             <tr>
+                                                <th class="py-2 px-4 border-b">Article Picture</th>
                                                 <th class="py-2 px-4 border-b">Title</th>
                                                 <th class="py-2 px-4 border-b">Category</th>
                                                 <th class="py-2 px-4 border-b">Description</th>
@@ -337,6 +340,7 @@ $objUser = mysqli_fetch_assoc($exe_current_user_q);
                                                 $categoryy = mysqli_fetch_assoc($category_resultt);
                                                 ?>
                                                 <tr class="hover:bg-gray-100">
+                                                    <td class="py-2 px-4 border-b"><img src="<?= $author_artcl['path'] ?>" class="rounded-lg h-36 w-36"></td>
                                                     <td class="py-2 px-4 border-b"><?= $author_artcl['title'] ?></td>
                                                     <td class="py-2 px-4 border-b"><?= $categoryy['category'] ?></td>
                                                     <td class="py-2 px-4 border-b"><?= $author_artcl['description'] ?></td>
