@@ -135,26 +135,27 @@ $objUser = mysqli_fetch_assoc($exe_current_user_q);
                                     { data: 'email' },
                                     { data: 'is_admin', render: function(data) { return data == 1 ? 'Admin' : 'Announcer'; } },
                                     {
-                                        data: 'id',
-                                        render: function(data) {
-                                            return '<form action="edit.php" method="post">' +
-                                                '<button name="btn" class="text-blue-500 hover:underline mr-2">Edit</button>' +
-                                                '<input name="id" type="hidden" value="' + data + '">' +
-                                                '</form>' +
-                                                '<button class="delete_btn text-red-500 hover:underline focus:outline-none focus:ring focus:border-red-300" data-id="' + data + '">Delete</button>';
-                                        }
-                                    }
-                                ]
-                            });
+                    data: 'id',
+                    render: function(data) {
+                        return '<form action="edit.php" method="post">' +
+                            '<button name="btn" class="text-blue-500 hover:underline mr-2">Edit</button>' +
+                            '<input name="id" type="hidden" value="' + data + '">' +
+                            '</form>' +
+                            '<button class="delete_btn text-red-500 hover:underline focus:outline-none focus:ring focus:border-red-300" data-id="' + data + '">Delete</button>';
+                    }
+                }
+            ]
+        });
 
-                            // Event delegation for delete button
-                            $('#usersTable').on('click', '.delete_btn', function() {
-                                var userId = $(this).data('id');
-                                console.log('Delete button clicked for user ID:', userId);
+        // Event delegation for delete button
+        $('#usersTable').on('click', '.delete_btn', function() {
+            var userId = $(this).data('id');
+            console.log('Delete button clicked for user ID:', userId);
 
-                                // Perform your delete logic here or show a confirmation dialog
-                                var confirmDelete = confirm('Are you sure you want to delete user with ID ' + userId + '?');
+            // Perform your delete logic here or show a confirmation dialog
+            var confirmDelete = confirm('Are you sure you want to delete user with ID ' + userId + '?');
 
+<<<<<<< HEAD
                                 if (confirmDelete) {
                                     // Send AJAX request to delete_process.php
                                     $.ajax({
@@ -163,21 +164,27 @@ $objUser = mysqli_fetch_assoc($exe_current_user_q);
                                         data: { delete_btn: true, id_user: userId },
                                         success: function(response) {
                                             console.log(response);
+=======
+            if (confirmDelete) {
+                $.ajax({
+                    url: 'delete_user_process.php', // Corrected the file name
+                    method: 'POST',
+                    data: { delete_btn: true, id_user: userId },
+                    success: function(response) {
+                        console.log(response);
+>>>>>>> 7797a8ace1322d29edb7eaa0585d41832ff1f1b2
 
-                                            // Remove the row from the DataTable
-                                            usersTable.row($(this).closest('tr')).remove().draw();
-
-                                            // Reload the page after successful deletion
-                                            location.reload();
-                                        },
-                                        error: function(error) {
-                                            console.error('Error deleting user:', error);
-                                        }
-                                    });
-                                }
-                            });
-                        });
-                    </script>
+                        // Remove the row from the DataTable
+                        usersTable.row($(this).closest('tr')).remove().draw();
+                    },
+                    error: function(error) {
+                        console.error('Error deleting user:', error);
+                    }
+                });
+            }
+        });
+    });
+</script>
                 </div>
                 <!-- end -->
             </div>
