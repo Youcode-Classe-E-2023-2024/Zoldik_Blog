@@ -133,9 +133,13 @@
                         <a href="dash.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Settings</a>
 
                         <a href="index.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Sign out</a>
+                         <?php
+                         if (isset($_SESSION['user_is_admin']) && $_SESSION['user_is_admin'] === true) {
+                         ?>
                         <a href="../admin/index.php" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Dashboard</a>
-
-
+                         <?php } else { ?>
+                             <a href="../admin/add-post.php" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Add Article</a>
+                         <?php } ?>
                      </div>
                   </div>
                </div>
