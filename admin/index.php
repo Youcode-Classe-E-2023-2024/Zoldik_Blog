@@ -48,7 +48,7 @@ $objUser = mysqli_fetch_assoc($exe_current_user_q);
                 </div>
             </div>
             <div class="opacity-80 bg-none" id="l">
-                <?php if(isset($_SESSION['user_is_admin']) && $_SESSION['user_is_admin'] === true) { ?>
+                <?php if(isset($_SESSION['user_is_admin']) && $_SESSION['user_is_admin'] == true) { ?>
                 <p class="w-full p-4 pl-10 my-2 text-2xl hover:cursor-pointer hover:opacity-100" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">Manage Users</p>
                 <div class="my-8">
                     <a href="categories.php" class="w-full p-4 pl-10 my-2 text-2xl hover:cursor-pointer opacity-70 hover:opacity-100">Manage Categories</a>
