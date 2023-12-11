@@ -8,7 +8,7 @@ Bienvenue dans le blog d'entreprise d'Avito, votre source d'informations sur les
 
 - [Description](#description)
 - [Fonctionnalités](#fonctionnalités)
-- [Base de données](#base de données)
+- [Base_de_données](#base_de_données)
 - [Auteurs](#auteurs)
 
 ## Description
