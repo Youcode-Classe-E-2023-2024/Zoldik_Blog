@@ -11,6 +11,7 @@ if (isset($_POST['delete_btn'])) {
     } else {
         echo 'error : ' . mysqli_error($connect);
     }
+} else {
+    echo 'Invalid request';
 }
-
 ?>
