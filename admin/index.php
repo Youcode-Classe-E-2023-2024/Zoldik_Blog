@@ -124,7 +124,7 @@ $objUser = mysqli_fetch_assoc($exe_current_user_q);
                                 ajax: 'json.php',
                                 columns: [
                                     { data: 'id' },
-                                    { data: 'avatar', render: function(data) { return '<img src="../' + data + '" class="h-16 w-16 rounded-full">'; } },
+                                    { data: 'avatar', render: function(data) { return '<img src="' + data + '" class="h-16 w-16 rounded-full">'; } },
                                     { data: 'firstname' },
                                     { data: 'lastname' },
                                     { data: 'username' },

@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
     $createpassword = filter_var($_POST['createpassword'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $confirmpassword = filter_var($_POST['confirmpassword'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $avatar = $_FILES['avatar'];
-
+ 
     // validate input values
     if(!$firstname){
         $_SESSION['signup']="Please enter your first name";
@@ -41,7 +41,7 @@ if(isset($_POST['submit'])){
                 //work on avatar
                 // rename avatar
                 $time = time(); //make each image name unique using current timestamp
-                $avatar_name = $time . $avatar['name'];
+                $avatar_name = '../images/'.$avatar['name'];
                 $avatar_tmp_name = $avatar['tmp_name'];
                 $avatar_destination_path  = 'images/' . $avatar_name;
 
