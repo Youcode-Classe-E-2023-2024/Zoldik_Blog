@@ -68,5 +68,20 @@ if (isset($_POST['btn'])) {
 
 
 </body>
+<script>
+    function previewImage() {
+        const fileInput = document.getElementById('profile-picture');
+        const preview = document.getElementById('preview');
+
+        const file = fileInput.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                preview.src = reader.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
 </html>
 <?php } ?>
